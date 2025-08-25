@@ -1,0 +1,198 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Section Styling */
+section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.dark-section {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+h3 {
+  font-size: 28px;
+  color: #f4c542;
+  margin-bottom: 20px;
+}
+p {
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero-overlay {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 90%;
+}
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #b17f35;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.cta:hover {
+  background: #e68900;
+  color: #fff;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #fff;
+}
+.btn-contact {
+  background: #ff9800;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn-contact:hover {
+  background: #e68900;
+  color: #fff;
+}
+
+/* Container Box Style */
+.dark-box {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+/* Donate Button */
+.btn-donate {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff9800;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-donate:hover {
+  background: #e68900;
+  color: #fff;
+}
+.home-section {
+  background-color: #000;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e3bf2e;
+  text-shadow: 0 0 10px #514b35, 0 0 20px #8e8665;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  border: 2px solid #f7e085;
+  border-radius: 10px;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #e8d585;
+}
+
+.glow-btn {
+  background-color: #d2be72;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #e8d589, 0 0 20px #f1dd8f;
+}
+
+.glow-btn:hover {
+  background-color: #000;
+  color: #f1dd91;
+  box-shadow: 0 0 20px #e7d48c, 0 0 40px #e6d37e;
+}
+
+.neon-input {
+  background-color: #111;
+  border: 2px solid #f0dc8c;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.neon-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #e7d176;
+  border-color: #9e8c426c;
+}
+.neon-input::placeholder {
+  color: #d9c469;
+  opacity: 0.8;
+  font-style: italic;
+}
+

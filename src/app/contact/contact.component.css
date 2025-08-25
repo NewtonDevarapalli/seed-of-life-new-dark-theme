@@ -1,0 +1,63 @@
+/* Keep previous styles (black bg + white text) */
+.contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-input {
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.contact-input::placeholder {
+  color: #aaa;
+}
+
+.contact-input:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 5px #ff9800;
+}
+
+.btn-contact {
+  background-color: #ff9800;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: #e68900;
+  color: #fff;
+}
+
+/* Alert Styling */
+.alert {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}

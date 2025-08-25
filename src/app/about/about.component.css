@@ -1,0 +1,119 @@
+.about-page {
+  background-color: #000;
+  color: #fff;
+}
+/* About Us Section */
+.about-section {
+  background: #000; /* keeping black background */
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* golden highlight */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #FFD700;
+  margin: 12px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #eee;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Gradient golden headings */
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Mission Cards */
+.mission-card {
+  background: #111;
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+}
+.mission-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.mission-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.mission-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #FFD700;
+}
+
+.mission-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+
+/* Belief & Service cards */
+.belief-card, .service-card {
+  border: 1px solid #FFD700;
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+.belief-card:hover, .service-card:hover {
+  background: #111;
+  box-shadow: 0 0 15px #FFD700;
+  transform: translateY(-5px);
+}
+
+/* Pastors */
+.pastor-card {
+  text-align: center;
+}
+.pastor-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 15px #FFD700;
+  transition: transform 0.3s ease;
+}
+.pastor-img:hover {
+  transform: scale(1.05);
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

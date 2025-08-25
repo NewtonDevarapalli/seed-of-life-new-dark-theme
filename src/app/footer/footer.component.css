@@ -1,0 +1,50 @@
+/* Footer Styles */
+.footer {
+    background-color: rgb(7, 7, 7);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* Social Icons Container */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  /* Individual Icon Styles */
+  .icon {
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Specific Colors for Each Icon */
+  .facebook {
+    background-color: #3b5998;
+  }
+  
+  .twitter {
+    background-color: #1da1f2;
+  }
+  
+  .linkedin {
+    background-color: #0077b5;
+  }
+  
+  .instagram {
+    background-color: #e1306c;
+  }
+  
+  .youtube {
+    background-color: #ff0000;
+  }

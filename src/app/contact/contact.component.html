@@ -1,0 +1,31 @@
+<section class="contact-section py-5 fade-in">
+  <div class="container text-center">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="lead">We’d love to hear from you. Please fill out the form below.</p>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ successMessage }}
+      <button type="button" class="btn-close" (click)="successMessage = null"></button>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ errorMessage }}
+      <button type="button" class="btn-close" (click)="errorMessage = null"></button>
+    </div>
+
+    <form class="contact-form mt-4 mx-auto" (submit)="sendEmail($event)">
+      <div class="mb-3">
+        <input type="text" name="from_name" class="form-control contact-input" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" name="reply_to" class="form-control contact-input" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <textarea name="message" class="form-control contact-input" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-contact">Send Message</button>
+    </form>
+  </div>
+</section>

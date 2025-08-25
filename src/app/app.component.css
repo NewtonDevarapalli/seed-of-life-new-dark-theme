@@ -1,0 +1,9 @@
+/* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(7, 7, 7, 0.299);
+    color: #f1f1f1;
+    width: 100%;
+  }
+ 
