@@ -4,14 +4,85 @@
     <source src="assets/seed-of-life-video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
   <div class="hero-overlay">
     <h1><b>Seed Of Life Ministries</b></h1>
     <p><b>The heaven on earth where you can worship, pray, and feel the Holy Spirit presence.</b></p>
-    <a href="https://youtu.be/DdVf0xgjUAI?si=eSnpjpklgh3mXfkx" class="cta" target="_blank">
+
+    <!-- Show these right after the paragraph -->
+    <div *ngIf="isLive" class="live-badge">
+      <span class="dot"></span> Live on YouTube
+        <a *ngIf="isLive"
+            href="https://www.youtube.com/@devarapallinewton4185/live"
+            class="cta live-btn" target="_blank">
+             Watch Live
+        </a>
+    </div>
+ 
+
+    <!-- Always available -->
+    <a href="https://youtu.be/DdVf0xgjUAI?si=eSnpjpklgh3mXfkx" 
+       class="cta secondary" target="_blank">
       Watch Sis.Thirveni Testimony
     </a>
   </div>
 </section>
+
+<!-- Events -->
+<section class="py-5 fade-in home-section">
+  <h2 class="section-title">Our Events</h2>
+  <div class="container mt-4">
+    <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="info-box event-card sunday">
+          <div class="overlay">
+            <h5>Sunday Service</h5>
+            <p>Join us every Sunday for worship and fellowship</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box event-card communion">
+          <div class="overlay">
+            <h5>Holy Communion</h5>
+            <p>Third Sunday Of The New Month</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box event-card deliverance">
+          <div class="overlay">
+            <h5>Deliverance Meeting</h5>
+            <p>Wednesday, 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box event-card night-prayer">
+          <div class="overlay">
+            <h5>All Night Prayer</h5>
+            <p>Third Friday Of The New Month</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box event-card mens-prayer">
+          <div class="overlay">
+            <h5>Men's Prayer</h5>
+            <p>Monday, 9:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Venue -->
 <section class="py-5 fade-in home-section">
   <h2 class="section-title">Our Venue</h2>
@@ -22,33 +93,6 @@
     </div>
   </div>
 </section>
-<!-- Events -->
-<section class="py-5 fade-in home-section">
-  <h2 class="section-title">Our Events</h2>
-  <div class="container mt-4">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="info-box">
-          <h5>Sunday Worship</h5>
-          <p>Join us every Sunday for worship and fellowship.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="info-box">
-          <h5>Deliverance Meeting</h5>
-          <p>Every Wednesday for Deliverance to Spirit, Soul, and Body.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="info-box">
-          <h5>All Night Prayer</h5>
-          <p>Be a part of our all-night prayer and be blessed.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Give -->
 <section class="py-5 fade-in home-section text-center">
   <h2 class="section-title">Partner With Us</h2>

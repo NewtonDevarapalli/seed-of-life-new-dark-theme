@@ -117,3 +117,18 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* Mobile Responsive Cards */
+@media (max-width: 767px) {
+  .mission-card,
+  .belief-card,
+  .service-card,
+  .pastor-card {
+    max-width: 85%;   /* reduce width */
+    margin: 0 auto;   /* center horizontally */
+  }
+
+  .pastor-img {
+    width: 100px;   /* slightly smaller on mobile */
+    height: 100px;
+  }
+}

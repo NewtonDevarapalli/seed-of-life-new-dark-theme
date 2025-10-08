@@ -1,0 +1,46 @@
+<section class="careers-section">
+  <h2 class="section-title">Join Our Ministry Team</h2>
+  <p class="section-subtitle">
+    At Seed Of Life Ministries, serving is more than a job—it's a calling.  
+    Explore opportunities to use your gifts and talents for God’s Kingdom.
+  </p>
+
+  <div class="container job-listings">
+    <!-- Job Card -->
+    <div class="job-card" *ngFor="let job of jobs">
+      <h3>{{ job.title }}</h3>
+      <p class="location">📍 {{ job.location }}</p>
+      <p class="desc">{{ job.description }}</p>
+      <button class="btn-apply" (click)="openApplication(job)">Apply</button>
+    </div>
+  </div>
+
+  <section class="volunteers-section">
+  <h2 class="section-title">Volunteer Opportunities</h2>
+  <p class="section-subtitle">Serve with us and make an eternal impact. Choose a role that matches your gifts and passion.</p>
+
+  <div class="container job-listings">
+    <div class="job-card" *ngFor="let volunteer of volunteers">
+      <h3>{{ volunteer.title }}</h3>
+      <p class="desc">{{ volunteer.description }}</p>
+      <button class="btn-apply" (click)="openApplication(volunteer)">Apply to Volunteer</button>
+    </div>
+  </div>
+  </section>
+
+  <!-- Application Modal -->
+  <div class="modal" *ngIf="selectedJob">
+    <div class="modal-content">
+      <span class="close" (click)="closeApplication()">&times;</span>
+      <h3>Apply for {{ selectedJob.title }}</h3>
+      <form (ngSubmit)="submitApplication()">
+        <input type="text" placeholder="Full Name" [(ngModel)]="application.name" name="name" required>
+        <input type="email" placeholder="Email Address" [(ngModel)]="application.email" name="email" required>
+        <input type="tel" placeholder="Phone Number" [(ngModel)]="application.phone" name="phone" required>
+        <textarea placeholder="Why do you feel called to this role?" [(ngModel)]="application.message" name="message"></textarea>
+        <input type="file" (change)="onFileChange($event)" />
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</section>
