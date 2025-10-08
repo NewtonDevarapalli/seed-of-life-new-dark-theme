@@ -1,51 +1,30 @@
-/* Footer Styles */
-.footer {
-  background-color: rgb(7, 7, 7);
+/* Footer */
+footer {
+  background: #24272d;
   color: #fff;
   text-align: center;
-  padding: 15px 10px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
 }
 
-/* Social Icons Container */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* allows icons to move to next line on small screens */
-  gap: 15px;       /* smaller gap on mobile */
-  margin: 10px 0;
-}
-
-/* Individual Icon Styles */
-.icon {
+footer a {
+  color: #ffffffaa;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 15px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
   color: #fff;
-  padding: 8px 12px;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.3s, transform 0.3s;
 }
 
-.icon:hover {
-  transform: scale(1.1);
-}
-
-/* Specific Colors for Each Icon */
-.facebook { background-color: #3b5998; }
-.twitter { background-color: #1da1f2; }
-.linkedin { background-color: #0077b5; }
-.instagram { background-color: #e1306c; }
-.youtube { background-color: #ff0000; }
-
-/* Responsive for Mobile */
 @media (max-width: 768px) {
-  .icon {
-    font-size: 13px;
-    padding: 6px 10px;
+  header {
+    flex-direction: column;
   }
 
-  .social-icons {
-    gap: 10px;
+  header nav {
+    margin-top: 10px;
   }
 }
+
+

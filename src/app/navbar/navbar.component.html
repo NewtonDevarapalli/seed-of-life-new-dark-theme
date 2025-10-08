@@ -1,57 +1,29 @@
-<div class="content">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">Seed Of Life Ministries</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/"
-              href="/"
-              routerLinkActive="active"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a 
-            class="nav-link" 
-            routerLink="/about" 
-            href="/about"
-            routerLinkActive="active"
-            >About</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/career"
-              href="/career"
-              routerLinkActive="active"
-              >Careers</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/contact"
-              href="/contact"
-              routerLinkActive="active"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
+<!-- Header -->
+<header>
+  <div class="logo">Seed Of Life Ministries</div>
+
+  <!-- Hamburger icon for mobile -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <a routerLink="/" href="/" routerLinkActive="active">Home</a>
+    <a routerLink="/about" href="/about" routerLinkActive="active">About</a>
+    <a routerLink="/media" href="/media" routerLinkActive="active">Media</a>
+    <a routerLink="/ministries" href="/ministries"  routerLinkActive="active">Ministries</a>
+    <a routerLink="/careers" href="/career" routerLinkActive="active">Careers</a>
+    <a routerLink="/give" href="/donate"  routerLinkActive="active">Give</a>
+    <a routerLink="/visit" href="/contact" routerLinkActive="active">Contact</a>
+    <!-- <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/media" routerLinkActive="active">Media</a>
+    <a routerLink="/ministries" routerLinkActive="active">Ministries</a>
+    <a routerLink="/careers" routerLinkActive="active">Careers</a>
+    <a routerLink="/give" routerLinkActive="active">Give</a>
+    <a routerLink="/visit" routerLinkActive="active">Contact</a> -->
   </nav>
-</div>
+</header>
