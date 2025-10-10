@@ -1,12 +1,33 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-ministries',
+  selector: 'app-involved',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './ministries.component.html',
-  styleUrl: './ministries.component.css'
+  styleUrls: ['./ministries.component.css']
 })
 export class MinistriesComponent {
-
+  involvementList = [
+    {
+      title: 'Volunteer',
+      description: 'Participate in the mission to advance the gospel by serving on a volunteer team.',
+      image: 'assets/images/volunteer.jpg',
+      link: '/ministries'
+    },
+    {
+      title: 'Lead',
+      description: 'Lead an eGroup, host a Watch Party or become a student leader.',
+      image: 'assets/images/lead.jpg',
+      link: '/careers'
+    },
+    {
+      title: 'Jobs',
+      description: 'Explore job opportunities to use your gifts in a ministry setting.',
+      image: 'assets/images/jobs.jpg',
+      link: '/careers'
+    }
+  ];
 }

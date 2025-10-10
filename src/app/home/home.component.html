@@ -1,14 +1,12 @@
 <!-- Hero Section -->
 <section class="hero">
   <video autoplay loop muted playsinline class="hero-video">
-    <source src="assets/seed-of-life-video.mp4" type="video/mp4">
+    <source src="assets/worship-background-video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-
   <div class="hero-overlay">
     <h1><b>Seed Of Life Ministries</b></h1>
     <p><b>The heaven on earth where you can worship, pray, and feel the Holy Spirit presence.</b></p>
-
     <!-- Show these right after the paragraph -->
     <div *ngIf="isLive" class="live-badge">
       <span class="dot"></span> Live on YouTube
@@ -18,71 +16,15 @@
              Watch Live
         </a>
     </div>
- 
-
     <!-- Always available -->
     <a href="https://youtu.be/DdVf0xgjUAI?si=eSnpjpklgh3mXfkx" 
        class="cta secondary" target="_blank">
-      Watch Sis.Thirveni Testimony
+      Watch Sis.Triveni Testimony
     </a>
   </div>
 </section>
-
 <!-- Events -->
-<section class="py-5 fade-in home-section">
-  <h2 class="section-title">Our Events</h2>
-  <div class="container mt-4">
-    <div class="row g-4">
-      
-      <div class="col-md-4">
-        <div class="info-box event-card sunday">
-          <div class="overlay">
-            <h5>Sunday Service</h5>
-            <p>Join us every Sunday for worship and fellowship</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card communion">
-          <div class="overlay">
-            <h5>Holy Communion</h5>
-            <p>Third Sunday Of The New Month</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card deliverance">
-          <div class="overlay">
-            <h5>Deliverance Meeting</h5>
-            <p>Wednesday, 8:00 PM</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card night-prayer">
-          <div class="overlay">
-            <h5>All Night Prayer</h5>
-            <p>Third Friday Of The New Month</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card mens-prayer">
-          <div class="overlay">
-            <h5>Men's Prayer</h5>
-            <p>Monday, 9:00 PM</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+ <app-services></app-services>
 <!-- Venue -->
 <section class="py-5 fade-in home-section">
   <h2 class="section-title">Our Venue</h2>
@@ -99,15 +41,13 @@
   <div class="container mt-4">
     <div class="info-box text-center">
       <p>Every partnership is an opportunity to build hope, transform lives, and share God's love in tangible ways. When you partner with our ministry, you join a growing family committed to serving those in need, inspiring spiritual growth, and reaching new communities with the message of grace.
-
-Your involvement goes far beyond financial support. As a partner, you become a vital part of every outreach, prayer, and story of restoration. Partnership means standing together—sharing resources, encouragement, and a mission that matters for eternity.</p>
+         Your involvement goes far beyond financial support. As a partner, you become a vital part of every outreach, prayer, and story of restoration. Partnership means standing together—sharing resources, encouragement, and a mission that matters for eternity.</p>
       <a class="btn btn-warning glow-btn mt-3" routerLink="/Donate"  href="/donate"  routerLinkActive="active">
         Help Us Serve
       </a>
     </div>
   </div>
 </section>
-
 <!-- Contact -->
 <section class="py-5 fade-in home-section">
   <h2 class="section-title">We’d Love To Hear From You</h2>
@@ -120,4 +60,5 @@ Your involvement goes far beyond financial support. As a partner, you become a v
     </div>
   </div>
 </section>
+<!-- Sermons -->
 <app-sermons></app-sermons>

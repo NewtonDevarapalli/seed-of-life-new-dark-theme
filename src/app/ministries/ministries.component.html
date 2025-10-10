@@ -1,1 +1,29 @@
-<p>ministries works!</p>
+<section class="involved-section">
+  <h2 class="main-title">How To Get Involved</h2>
+  <p class="subtitle">
+    See how God can use your gifts to make an eternal impact.
+  </p>
+
+  <div class="involved-container">
+    <div class="involved-card" *ngFor="let item of involvementList">
+      <img [src]="item.image" [alt]="item.title">
+      <div class="card-content">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a [routerLink]="item.link" class="learn-more">
+    Learn more →
+  </a>
+      </div>
+    </div>
+    <!-- <div class="involved-card" *ngFor="let item of involvementList">
+      <img [src]="item.image" [alt]="item.title">
+      <div class="card-content">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a routerLink="{{item.link}}" class="learn-more">
+          Learn more →
+        </a>
+      </div>
+    </div> -->
+  </div>
+</section>

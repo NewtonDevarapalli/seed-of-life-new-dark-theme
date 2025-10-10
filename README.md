@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Deploy npm run deploy
+ng build --configuration production --base-href "https://newtondevarapalli.github.io/seed-of-life/"
+copy dist\seed-of-life\browser\index.html dist\seed-of-life\browser\404.html
+npx angular-cli-ghpages --dir=dist/seed-of-life/browser --cname=www.seedoflifeinternational.org
+https://newtondevarapalli.github.io/seed-of-life/
+

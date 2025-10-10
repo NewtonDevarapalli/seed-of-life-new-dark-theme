@@ -1,13 +1,21 @@
+/* -----------------------------
+   ABOUT PAGE STYLING
+----------------------------- */
+
 .about-page {
   background-color: #000;
   color: #fff;
 }
-/* About Us Section */
+
+/* -----------------------------
+   ABOUT US SECTION
+----------------------------- */
 .about-section {
   background: #000; /* keeping black background */
   padding: 60px 20px;
 }
 
+/* Section Title */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -18,6 +26,7 @@
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
 }
 
+/* Underline for section title */
 .title-underline {
   width: 80px;
   height: 4px;
@@ -27,6 +36,7 @@
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 }
 
+/* Lead paragraph */
 .lead {
   font-size: 1.2rem;
   color: #eee;
@@ -35,7 +45,7 @@
   line-height: 1.7;
 }
 
-/* Gradient golden headings */
+/* Gradient golden headings (for section titles) */
 .section-title {
   font-weight: 700;
   font-size: 2rem;
@@ -46,79 +56,100 @@
   margin-bottom: 1.5rem;
 }
 
-/* Mission Cards */
+/* -----------------------------
+   MISSION CARDS
+----------------------------- */
 .mission-card {
-  background: #111;
-  border: 1px solid #FFD700;
-  border-radius: 15px;
+  background: #000; /* updated to black background */
+  /* removed border */
   padding: 30px 20px;
   text-align: center;
   transition: all 0.4s ease-in-out;
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
 }
+
 .mission-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
 }
 
+/* Icon inside mission card */
 .mission-card .icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
+/* Title inside mission card */
 .mission-card h5 {
   font-weight: 600;
   margin-bottom: 10px;
   color: #FFD700;
 }
 
+/* Description inside mission card */
 .mission-card p {
   font-size: 0.95rem;
   color: #ddd;
 }
 
-
-/* Belief & Service cards */
+/* -----------------------------
+   BELIEF & SERVICE CARDS
+----------------------------- */
 .belief-card, .service-card {
-  border: 1px solid #FFD700;
+  background: #000; /* updated to black background */
+  /* removed border */
   padding: 15px;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
 }
+
 .belief-card:hover, .service-card:hover {
-  background: #111;
+  background: #111; /* slight difference in color when hovered */
   box-shadow: 0 0 15px #FFD700;
   transform: translateY(-5px);
 }
 
-/* Pastors */
+/* -----------------------------
+   PASTOR CARDS
+----------------------------- */
 .pastor-card {
   text-align: center;
 }
+
+/* Pastor image styling */
 .pastor-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 3px solid #FFD700;
+  border: 3px solid #FFD700; /* border removed as per request */
   box-shadow: 0 0 15px #FFD700;
   transition: transform 0.3s ease;
 }
+
 .pastor-img:hover {
   transform: scale(1.05);
 }
 
-/* Fade-in animations */
+/* -----------------------------
+   FADE-IN ANIMATIONS
+----------------------------- */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 1s ease, transform 1s ease;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-/* Mobile Responsive Cards */
+
+/* -----------------------------
+   MOBILE RESPONSIVE CARDS
+----------------------------- */
 @media (max-width: 767px) {
+  /* Reduce width of cards on mobile */
   .mission-card,
   .belief-card,
   .service-card,
@@ -127,6 +158,7 @@
     margin: 0 auto;   /* center horizontally */
   }
 
+  /* Adjust size of pastor images */
   .pastor-img {
     width: 100px;   /* slightly smaller on mobile */
     height: 100px;

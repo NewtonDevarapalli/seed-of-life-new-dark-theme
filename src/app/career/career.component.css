@@ -1,156 +1,206 @@
+/* -----------------------------
+   SECTION TITLE AND SUBTITLE
+----------------------------- */
+
+/* Title of the section with golden color and text-shadow for emphasis */
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: 700;
-  color: #FFD700; /* golden highlight */
+  color: #c1ac35; /* golden highlight */
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* glowing effect */
 }
 
+/* Subtitle under the section title, lighter color */
 .section-subtitle {
   font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 40px;
+  color: #ccc; /* light grey */
+  margin-bottom: 40px; /* space below the subtitle */
 }
 
+/* -----------------------------
+   CAREERS SECTION STYLING
+----------------------------- */
+
+/* The overall background for the careers section */
 .careers-section {
-  background: #0f0f0f;
-  color: #fff;
-  padding: 100px 20px; /* increased padding */
-  text-align: center;
+  background: #000; /* dark background */
+  color: #fff; /* white text */
+  padding: 100px 20px; /* padding for spacing */
+  text-align: center; /* center the content */
 }
 
+/* -----------------------------
+   JOB LISTINGS GRID
+----------------------------- */
+
+/* Grid display for job listings, with a gap between cards */
 .job-listings {
   display: grid;
   gap: 30px; /* more gap between cards */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* reduced min width */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* flexible card sizes */
 }
 
+/* -----------------------------
+   JOB CARD STYLING
+----------------------------- */
+
+/* Card for individual job listing */
 .job-card {
-  background: #1a1a1a;
-  padding: 12px;             /* smaller padding */
-  border: 1px solid #e3bf2e;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  max-width: 240px;          /* smaller width */
-  margin: 0 auto;            /* center smaller cards */
-  min-height: 180px;         /* reduced height */
+  background: #000; /* dark background */
+  padding: 12px; /* padding inside the card */
+  border-radius: 10px; /* rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth transition for hover */
+  max-width: 240px; /* limiting width */
+  margin: 0 auto; /* center cards */
+  min-height: 180px; /* set minimum height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* keeps layout clean */
+  justify-content: space-between; /* space out content inside the card */
 }
 
+/* Job card title styling */
 .job-card h3 {
-  font-size: 1.1rem;  /* slightly smaller title */
-  margin-bottom: 8px;
+  font-size: 1.1rem;  /* smaller font for title */
+  margin-bottom: 8px;  /* margin below the title */
 }
 
+/* Job location styling */
 .location {
   font-size: 0.85rem;
+  color: #ccc; /* light grey text */
 }
 
+/* Job description styling */
 .desc {
   margin: 10px 0;
   font-size: 0.9rem;
   line-height: 1.4;
+  color: #ccc; /* grey color for description */
 }
 
+/* Hover effect for job card (lift effect and box-shadow) */
 .job-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #e3bf2e88;
+  transform: translateY(-5px); /* lift effect on hover */
+  box-shadow: 0 0 15px #e3bf2e88; /* glowing shadow */
 }
 
+/* -----------------------------
+   APPLY BUTTON STYLING
+----------------------------- */
+
+/* Apply button inside job card */
 .btn-apply {
   padding: 10px 20px;
-  background: #ffd700;
-  border: none;
-  color: #000;
+  background: #716c52; /* golden button */
+  border: none; /* removed border */
+  color: #000; /* black text */
   font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+  border-radius: 5px; /* rounded button corners */
+  cursor: pointer; /* pointer cursor on hover */
+  transition: 0.3s; /* smooth transition on hover */
 }
 
+/* Hover effect for apply button */
 .btn-apply:hover {
-  background: #e6c200;
+  background: #c9b963; /* darken the golden color on hover */
 }
 
-/* Modal Styling */
+/* -----------------------------
+   MODAL STYLING (FOR JOB APPLICATION FORM)
+----------------------------- */
+
+/* Modal background */
 .modal {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85); /* dark semi-transparent background */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* center modal content */
 }
 
+/* Modal content box */
 .modal-content {
-  background: #111;
+  background: #111; /* dark background for the modal */
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 12px; /* rounded corners for modal */
   width: 90%;
-  max-width: 500px;
+  max-width: 500px; /* max width of modal */
   text-align: left;
   position: relative;
 }
 
+/* Modal title */
 .modal-content h3 {
-  color: #ffd700;
-  margin-bottom: 20px;
+  color: #a89943; /* golden color for title */
+  margin-bottom: 20px; /* space below the title */
 }
 
+/* Modal form input and textarea */
 .modal-content input,
 .modal-content textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  background: #1a1a1a;
-  border: 1px solid #e3bf2e;
-  border-radius: 6px;
-  color: #fff;
+  margin-bottom: 15px; /* space below input fields */
+  padding: 10px; /* padding inside inputs */
+  background: #000; /* dark background for inputs */
+  border: 1px solid #ab9640; /* golden border */
+  border-radius: 6px; /* rounded corners */
+  color: #fff; /* white text inside inputs */
 }
 
+/* Submit button in modal */
 .btn-submit {
-  background: #ffd700;
-  color: #000;
+  background: #c3af41; /* golden submit button */
+  color: #000; /* black text */
   font-weight: bold;
   border: none;
   padding: 12px;
   width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 6px; /* rounded button */
+  cursor: pointer; /* pointer cursor on hover */
 }
 
+/* Hover effect for submit button */
 .btn-submit:hover {
-  background: #e6c200;
+  background: #a08f30; /* darken the golden color on hover */
 }
 
+/* Close button in modal */
 .close {
   position: absolute;
   top: 10px; right: 15px;
   font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
+  cursor: pointer; /* pointer cursor on hover */
+  color: #fff; /* white close icon */
 }
-/* Mobile Responsive Careers Page */
+
+/* -----------------------------
+   MOBILE RESPONSIVE CAREERS PAGE
+----------------------------- */
+
+/* Adjustments for small screen sizes (mobile view) */
 @media (max-width: 767px) {
+  /* Job card adjustments for smaller screens */
   .job-card {
-    max-width: 85%;   /* shrink job cards */
-    margin: 0 auto;   /* center them */
+    max-width: 85%;   /* reduce the max width */
+    margin: 0 auto;   /* center job cards */
   }
 
+  /* Modal content adjustments for smaller screens */
   .modal-content {
-    width: 90%;       /* ensure modal fits mobile screens */
-    max-width: 400px; /* slightly smaller for phones */
-    padding: 20px;
+    width: 90%;       /* adjust width to fit smaller screens */
+    max-width: 400px; /* set max width */
+    padding: 20px;    /* reduce padding */
   }
 
+  /* Button adjustments for mobile */
   .btn-apply,
   .btn-submit {
-    font-size: 0.95rem; /* slightly smaller button text */
-    padding: 10px;
+    font-size: 0.95rem; /* slightly smaller font size */
+    padding: 10px; /* reduce padding */
   }
 }

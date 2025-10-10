@@ -1,4 +1,3 @@
-<!-- Header -->
 <header>
   <div class="logo">Seed Of Life Ministries</div>
 
@@ -11,19 +10,14 @@
   </label>
 
   <nav>
-    <a routerLink="/" href="/" routerLinkActive="active">Home</a>
-    <a routerLink="/about" href="/about" routerLinkActive="active">About</a>
-    <a routerLink="/media" href="/media" routerLinkActive="active">Media</a>
-    <a routerLink="/ministries" href="/ministries"  routerLinkActive="active">Ministries</a>
-    <a routerLink="/careers" href="/career" routerLinkActive="active">Careers</a>
-    <a routerLink="/give" href="/donate"  routerLinkActive="active">Give</a>
-    <a routerLink="/visit" href="/contact" routerLinkActive="active">Contact</a>
-    <!-- <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/media" routerLinkActive="active">Media</a>
-    <a routerLink="/ministries" routerLinkActive="active">Ministries</a>
-    <a routerLink="/careers" routerLinkActive="active">Careers</a>
-    <a routerLink="/give" routerLinkActive="active">Give</a>
-    <a routerLink="/visit" routerLinkActive="active">Contact</a> -->
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
+    <a routerLink="media" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Media</a>
+    <a routerLink="ministries" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ministries</a>
+    <a routerLink="careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Careers</a>
+    <a routerLink="give" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Give</a>
+    <a routerLink="visit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+    <!-- <a routerLink="sermons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sermons</a> -->
   </nav>
 </header>
+

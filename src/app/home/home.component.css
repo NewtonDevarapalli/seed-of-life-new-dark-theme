@@ -1,3 +1,5 @@
+/* 🌍 GLOBAL BASE STYLES
+----------------------------------- */
 body {
   font-family: 'Poppins', sans-serif;
   background: #0f0f0f;
@@ -6,28 +8,32 @@ body {
   padding: 0;
 }
 
-/* General Section Styling */
 section {
   text-align: center;
   padding: 80px 20px;
 }
 
-.dark-section {
-  background: #0f0f0f;
-  color: #fff;
-}
-
-h3 {
-  font-size: 28px;
+h2, h3 {
+  font-family: 'Poppins', sans-serif;
   color: #f4c542;
   margin-bottom: 20px;
 }
+
 p {
   color: #cfcfcf;
   line-height: 1.6;
 }
 
-/* Hero */
+/* 🖤 General Section Background */
+.home-section {
+  background-color: #000;
+  color: #fff;
+}
+
+/* -----------------------------
+   🎬 HERO SECTION
+   Background video with overlay
+----------------------------- */
 .hero {
   position: relative;
   height: 100vh;
@@ -40,244 +46,70 @@ p {
 
 .hero-video {
   position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
   z-index: -1;
 }
 
-/* Overlay should fill the hero */
 .hero-overlay {
   position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.6);
   color: #fff;
-
   display: flex;
-  flex-direction: column;  /* vertical stacking */
+  flex-direction: column;
   align-items: center;
-  justify-content: center; /* center text in full height */
+  justify-content: center;
   text-align: center;
   padding: 30px;
-  gap: 12px; /* spacing between elements */
+  gap: 12px;
 }
-
 
 .hero-overlay h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 .hero-overlay p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
-.cta {
+
+/* ✨ BUTTON STYLES */
+a.cta {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #b17f35;
+  padding: 10px 22px;
+  background: #ffcc00;
   color: #000;
   font-weight: bold;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-.cta:hover {
-  background: #e68900;
-  color: #fff;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 500px;
-  margin: 20px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border: 1px solid #333;
-  border-radius: 6px;
-  background: #1a1a1a;
-  color: #fff;
-}
-.btn-contact {
-  background: #ff9800;
-  border: none;
-  padding: 12px;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-.btn-contact:hover {
-  background: #e68900;
-  color: #fff;
-}
-
-/* Container Box Style */
-.dark-box {
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-  max-width: 900px;
-  margin: 0 auto 50px;
-}
-
-/* Donate Button */
-.btn-donate {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ff9800;
-  color: #000;
-  font-weight: bold;
-  border-radius: 6px;
   text-decoration: none;
+  border-radius: 6px;
   transition: 0.3s;
+  animation: fadeIn 0.6s ease-in-out;
 }
-.btn-donate:hover {
-  background: #e68900;
+
+a.cta:hover {
+  background: #ffd900;
   color: #fff;
 }
-.home-section {
-  background-color: #000;
-  color: #fff;
-}
 
-.section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e3bf2e;
-  text-shadow: 0 0 10px #514b35, 0 0 20px #8e8665;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.info-box {
-  border: 2px solid #f7e085;
-  border-radius: 10px;
-  padding: 20px;
-  background: #111;
-  color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.info-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #e8d585;
-}
-
-.glow-btn {
-  background-color: #d2be72;
+a.cta.secondary {
+  background: #8f8042;
   color: #000;
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 10px 20px;
-  transition: 0.3s;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px #e8d589, 0 0 20px #f1dd8f;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-.glow-btn:hover {
-  background-color: #000;
-  color: #f1dd91;
-  box-shadow: 0 0 20px #e7d48c, 0 0 40px #e6d37e;
+a.cta.secondary:hover {
+  background: #fffb00;
 }
 
-.neon-input {
-  background-color: #111;
-  border: 2px solid #f0dc8c;
-  color: #fff;
-  border-radius: 8px;
-}
-
-.neon-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px #e7d176;
-  border-color: #9e8c426c;
-}
-.neon-input::placeholder {
-  color: #d9c469;
-  opacity: 0.8;
-  font-style: italic;
-}
-
-/* Base event card style */
-.event-card {
-  position: relative; /* important for absolute child */
-  height: 220px;
-  border-radius: 15px;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Overlay for text readability */
-.event-card .overlay {
-  position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%;
-  height: 100%;   /* <-- fills full card */
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* keep text at bottom */
-  border-radius: 15px; /* match card corners */
-}
-
-.event-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-}
-
-.event-card h5 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffd700;
-}
-
-.event-card p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #f1f1f1;
-}
-
-/* Background images for each event */
-.event-card.sunday {
-  background-image: url('/assets/events/sunday-worship.jpg');
-}
-.event-card.communion {
-  background-image: url('/assets/events/communion.jpg');
-}
-.event-card.deliverance {
-  background-image: url('/assets/events/deliverance.jpg');
-}
-.event-card.night-prayer {
-  background-image: url('/assets/events/night-prayer.jpg');
-}
-.event-card.mens-prayer {
-  background-image: url('/assets/events/mens-prayer.jpg');
-}
-
-/* Live badge style */
+/* 🔴 LIVE BADGE */
 .live-badge {
-  display: inline-flex;       /* side by side */
+  display: inline-flex;
   align-items: center;
-  gap: 10px;                  /* space between text and button */
+  gap: 10px;
   background: #ff0000;
   color: white;
   font-weight: bold;
@@ -299,7 +131,7 @@ p {
 .live-badge .live-btn {
   padding: 6px 12px;
   font-size: 13px;
-  background: #fff;    /* button distinct from red badge */
+  background: #fff;
   color: #ff0000;
   border-radius: 5px;
   font-weight: bold;
@@ -311,52 +143,54 @@ p {
   background: #ffe5e5;
 }
 
-/*video container */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
+/* -----------------------------
+   🏛️ VENUE, PARTNER & CONTACT
+   (info-box and glowing button)
+----------------------------- */
+.info-box {
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3); /* subtle glow */
 }
 
-
-/* Primary button */
-a.cta {
-  display: inline-block;
-  padding: 10px 22px;
-  background: #ffcc00;
+/* 💛 Glow Button */
+.glow-btn {
+  background-color: #d2be72;
   color: #000;
   font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
+  border-radius: 30px;
+  padding: 10px 20px;
   transition: 0.3s;
-  animation: fadeIn 0.6s ease-in-out;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #e8d58966, 0 0 20px #f1dd8f66;
 }
 
-a.cta:hover {
-  background: #ffd900;
-  color: #fff;
+.glow-btn:hover {
+  background-color: #000;
+  color: #f1dd91;
+  box-shadow: 0 0 20px #e7d48c, 0 0 40px #e6d37e;
 }
 
-/* Secondary button */
-a.cta.secondary {
-  background: #8f8042;
-  color: #000;
-  animation: fadeIn 0.8s ease-in-out;
+/* 🎇 SECTION TITLES */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e3bf2e;
+  text-shadow: 0 0 10px #514b35, 0 0 20px #8e8665;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-a.cta.secondary:hover {
-  background: #fffb00;
-}
-
+/* -----------------------------
+   ✨ ANIMATIONS + RESPONSIVE
+----------------------------- */
 @keyframes pulse {
   0% { transform: scale(0.9); opacity: 0.7; }
   50% { transform: scale(1.1); opacity: 1; }
@@ -368,14 +202,18 @@ a.cta.secondary:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 767px) {
-  .event-card,
   .info-box {
-    max-width: 85%;    /* reduce width */
-    max-height: 65%;   /* optional, for visual balance */
-    margin: 0 auto;    /* center horizontally */
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
   }
 }
-
-
-
