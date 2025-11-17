@@ -2,7 +2,7 @@
   <div class="logo">Seed Of Life Ministries</div>
 
   <!-- Hamburger icon for mobile -->
-  <input type="checkbox" id="menu-toggle">
+  <input type="checkbox" id="menu-toggle" #menuToggle>
   <label for="menu-toggle" class="menu-icon">
     <span></span>
     <span></span>
@@ -10,14 +10,19 @@
   </label>
 
   <nav>
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
-    <a routerLink="media" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Media</a>
-    <a routerLink="ministries" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ministries</a>
-    <a routerLink="careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Careers</a>
-    <a routerLink="give" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Give</a>
-    <a routerLink="visit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
-    <!-- <a routerLink="sermons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sermons</a> -->
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Home</a>
+    <a routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">About</a>
+    <a routerLink="media" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Media</a>
+    <a routerLink="ministries" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Ministries</a>
+    <a routerLink="careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Careers</a>
+    <a routerLink="give" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Give</a>
+    <a routerLink="visit" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="menuToggle.checked = false">Contact</a>
   </nav>
 </header>
-

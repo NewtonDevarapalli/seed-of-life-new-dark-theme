@@ -1,36 +1,55 @@
-/* Keep previous styles (black bg + white text) */
+/* -----------------------------
+   CONTACT SECTION BASE STYLES
+----------------------------- */
 .contact-section {
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* dark background */
+  color: #fff; /* white text */
   padding: 60px 20px;
+  text-align: center; /* center text for all content */
+  width: 100%; /* ensures full width */
+  box-sizing: border-box; /* include padding in width */
 }
 
+/* Section title with golden glow */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #dec32f; /* golden highlight */
   text-transform: uppercase;
   letter-spacing: 2px;
-  position: relative;
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+  margin-bottom: 20px;
 }
 
+/* Subtitle / lead text */
 .lead {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #f1f1f1;
+  line-height: 1.5;
 }
 
+/* -----------------------------
+   CONTACT FORM STYLES
+----------------------------- */
 .contact-form {
   max-width: 600px;
+  width: 100%; /* full width up to max */
+  margin: 0 auto; /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* consistent spacing */
 }
 
+/* Input field styling */
 .contact-input {
   background-color: #111;
   border: 1px solid #444;
   color: #fff;
   padding: 12px;
   border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-input::placeholder {
@@ -40,8 +59,12 @@
 .contact-input:focus {
   border-color: #ff9800;
   box-shadow: 0 0 5px #ff9800;
+  outline: none;
 }
 
+/* -----------------------------
+   BUTTON STYLES
+----------------------------- */
 .btn-contact {
   background-color: #ff9800;
   color: #000;
@@ -49,6 +72,8 @@
   padding: 12px 25px;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-contact:hover {
@@ -56,9 +81,40 @@
   color: #fff;
 }
 
-/* Alert Styling */
+/* -----------------------------
+   ALERT STYLING
+----------------------------- */
 .alert {
   max-width: 600px;
   margin: 20px auto;
   text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+----------------------------- */
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-section {
+    padding: 40px 15px; /* less padding for small screens */
+  }
+
+  .btn-contact {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    max-width: 100%; /* occupy full width */
+  }
 }

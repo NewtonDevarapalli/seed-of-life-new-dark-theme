@@ -1,16 +1,18 @@
-/* 🌍 GLOBAL BASE STYLES
------------------------------------ */
+/* 🌍 GLOBAL BASE STYLES */
 body {
   font-family: 'Poppins', sans-serif;
   background: #0f0f0f;
   color: #e0e0e0;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* prevent sideways scroll on mobile */
 }
 
 section {
   text-align: center;
   padding: 80px 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 h2, h3 {
@@ -28,20 +30,20 @@ p {
 .home-section {
   background-color: #000;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* -----------------------------
-   🎬 HERO SECTION
-   Background video with overlay
------------------------------ */
+/* 🎬 HERO SECTION */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
 .hero-video {
@@ -54,8 +56,7 @@ p {
 
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.6);
   color: #fff;
   display: flex;
@@ -65,15 +66,16 @@ p {
   text-align: center;
   padding: 30px;
   gap: 12px;
+  box-sizing: border-box;
 }
 
 .hero-overlay h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   margin-bottom: 20px;
 }
 
 .hero-overlay p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 30px;
 }
 
@@ -88,6 +90,7 @@ a.cta {
   border-radius: 6px;
   transition: 0.3s;
   animation: fadeIn 0.6s ease-in-out;
+  white-space: nowrap;
 }
 
 a.cta:hover {
@@ -117,6 +120,7 @@ a.cta.secondary:hover {
   border-radius: 10px;
   margin-top: 10px;
   font-size: 14px;
+  flex-wrap: wrap;
 }
 
 .live-badge .dot {
@@ -143,21 +147,21 @@ a.cta.secondary:hover {
   background: #ffe5e5;
 }
 
-/* -----------------------------
-   🏛️ VENUE, PARTNER & CONTACT
-   (info-box and glowing button)
------------------------------ */
+/* 🏛️ VENUE, PARTNER & CONTACT */
 .info-box {
   background: #000;
   color: #fff;
   border-radius: 10px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 400px;
+  margin: 20px auto;
+  box-sizing: border-box;
 }
 
 .info-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3); /* subtle glow */
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 }
 
 /* 💛 Glow Button */
@@ -170,6 +174,7 @@ a.cta.secondary:hover {
   transition: 0.3s;
   text-transform: uppercase;
   box-shadow: 0 0 10px #e8d58966, 0 0 20px #f1dd8f66;
+  display: inline-block;
 }
 
 .glow-btn:hover {
@@ -180,7 +185,7 @@ a.cta.secondary:hover {
 
 /* 🎇 SECTION TITLES */
 .section-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
   color: #e3bf2e;
   text-shadow: 0 0 10px #514b35, 0 0 20px #8e8665;
@@ -188,9 +193,7 @@ a.cta.secondary:hover {
   margin-bottom: 1rem;
 }
 
-/* -----------------------------
-   ✨ ANIMATIONS + RESPONSIVE
------------------------------ */
+/* ✨ ANIMATIONS */
 @keyframes pulse {
   0% { transform: scale(0.9); opacity: 0.7; }
   50% { transform: scale(1.1); opacity: 1; }
@@ -202,18 +205,34 @@ a.cta.secondary:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 📱 MOBILE RESPONSIVENESS */
+/* 📱 RESPONSIVE FIXES */
 @media (max-width: 767px) {
-  .info-box {
-    max-width: 85%;
-    margin: 0 auto;
+  section {
+    padding: 60px 16px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero-overlay {
+    padding: 20px;
   }
 
   .hero-overlay h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-overlay p {
     font-size: 1rem;
+  }
+
+  .info-box {
+    width: 90%;
+  }
+
+  a.cta, .glow-btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
   }
 }

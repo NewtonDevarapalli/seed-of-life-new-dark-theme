@@ -1,29 +1,47 @@
-<section class="involved-section">
-  <h2 class="main-title">How To Get Involved</h2>
-  <p class="subtitle">
-    See how God can use your gifts to make an eternal impact.
-  </p>
-
-  <div class="involved-container">
-    <div class="involved-card" *ngFor="let item of involvementList">
-      <img [src]="item.image" [alt]="item.title">
-      <div class="card-content">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <a [routerLink]="item.link" class="learn-more">
-    Learn more →
-  </a>
+<div class="ministries-section">
+  <!-- Section Title -->
+  <h2 class="section-title">Ministries & Programs</h2>
+  
+  <!-- Card Container -->
+  <div class="card-container">
+    <!-- Prophetic School Card -->
+    <div class="ministry-card prophetic-school">
+      <div class="overlay">
+        <h5>Admissions for Prophetic Schools</h5>
+        <p>Join our prophetic school and discover your divine calling.</p>
       </div>
     </div>
-    <!-- <div class="involved-card" *ngFor="let item of involvementList">
-      <img [src]="item.image" [alt]="item.title">
-      <div class="card-content">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <a routerLink="{{item.link}}" class="learn-more">
-          Learn more →
-        </a>
+
+    <!-- International Conferences Card -->
+    <div class="ministry-card international-conf">
+      <div class="overlay">
+        <h5>International Conferences</h5>
+        <p>Global gatherings of believers for spiritual growth and renewal.</p>
       </div>
-    </div> -->
+    </div>
+
+    <!-- Media Card -->
+    <div class="ministry-card media">
+      <div class="overlay">
+        <h5>Media Ministry</h5>
+        <p>Access inspiring sermons, worship sessions, and media content.</p>
+      </div>
+    </div>
+
+    <!-- Jobs Card -->
+    <div class="ministry-card jobs">
+      <div class="overlay">
+        <h5>Job Opportunities</h5>
+        <p>Explore opportunities to work within the church and ministries.</p>
+      </div>
+    </div>
+
+    <!-- Upcoming Events Card -->
+    <div class="ministry-card upcoming-events">
+      <div class="overlay">
+        <h5>Upcoming Events</h5>
+        <p>Stay up to date with all the events happening at our church.</p>
+      </div>
+    </div>
   </div>
-</section>
+</div>

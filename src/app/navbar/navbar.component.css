@@ -1,4 +1,6 @@
-/* Base Header */
+/* -----------------------------
+   🏠 BASE HEADER
+----------------------------- */
 header {
   display: flex;
   justify-content: space-between;
@@ -10,6 +12,8 @@ header {
   top: 0;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 header .logo {
@@ -18,14 +22,16 @@ header .logo {
   color: #000;
 }
 
-/* Navigation Links */
+/* -----------------------------
+   NAVIGATION LINKS
+----------------------------- */
 header nav {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 header nav a {
-  margin: 0 15px;
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
@@ -37,26 +43,28 @@ header nav a.active {
   color: #4a90e2;
 }
 
-/* CTA Button */
+/* CTA BUTTON */
 header nav .cta {
   font-weight: 600;
   color: #fff;
   background: #2a5298;
   padding: 8px 16px;
   border-radius: 25px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 header nav .cta:hover {
   background: #1e3a8a;
+  transform: scale(1.05);
 }
 
-/* Hide the checkbox */
+/* -----------------------------
+   HAMBURGER MENU
+----------------------------- */
 #menu-toggle {
   display: none;
 }
 
-/* Hamburger Icon */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -64,6 +72,7 @@ header nav .cta:hover {
   width: 25px;
   height: 18px;
   cursor: pointer;
+  z-index: 11;
 }
 
 .menu-icon span {
@@ -71,17 +80,19 @@ header nav .cta:hover {
   height: 3px;
   background: #1a1a1a;
   border-radius: 3px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-/* Mobile Styles */
+/* -----------------------------
+   MOBILE / TABLET RESPONSIVENESS
+----------------------------- */
 @media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    padding: 15px 25px;
+  /* Show hamburger menu */
+  .menu-icon {
+    display: flex;
   }
 
-  /* Hide nav by default on mobile */
+  /* Hide nav by default */
   header nav {
     display: none;
     flex-direction: column;
@@ -90,25 +101,28 @@ header nav .cta:hover {
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
   }
 
   header nav a {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 8px 0;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  header nav .cta {
+    margin: 10px auto 0 auto;
+    width: 90%;
     text-align: center;
   }
 
-  /* Show hamburger icon */
-  .menu-icon {
-    display: flex;
-  }
-
-  /* Toggle menu on checkbox click */
+  /* Toggle menu when checkbox checked */
   #menu-toggle:checked + .menu-icon + nav {
     display: flex;
   }
 
-  /* Animate hamburger to X when open */
+  /* Hamburger animation to X */
   #menu-toggle:checked + .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translateY(7px);
   }
@@ -117,5 +131,28 @@ header nav .cta:hover {
   }
   #menu-toggle:checked + .menu-icon span:nth-child(3) {
     transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+/* -----------------------------
+   SMALLER MOBILE DEVICES
+----------------------------- */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  header nav .cta {
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 }

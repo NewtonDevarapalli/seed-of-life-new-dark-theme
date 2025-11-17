@@ -1,80 +1,132 @@
-.involved-section {
-  background: #fff;
-  padding: 80px 20px;
+/* -----------------------------
+   🎉 MINISTRIES SECTION
+----------------------------- */
+.ministries-section {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e3bf2e;
+  text-shadow: 0 0 10px #514b35, 0 0 20px #8e8665;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.main-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #111;
-}
-
-.subtitle {
-  color: #555;
-  font-size: 1.1rem;
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-.involved-container {
+/* Card Container for ministries categories */
+.card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   justify-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  align-items: center;
 }
 
-.involved-card {
-  background: #fff;
-  border-radius: 16px;
+/* Ministry Card */
+.ministry-card {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  max-width: 350px;
 }
 
-.involved-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.ministry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 }
 
-.involved-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-.card-content {
+/* Overlay for card content */
+.ministry-card .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 15px;
 }
 
-.card-content h3 {
-  color: #111;
-  font-size: 1.25rem;
+/* Card Title */
+.ministry-card h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
   margin-bottom: 10px;
 }
 
-.card-content p {
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
+/* Card Description */
+.ministry-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #f1f1f1;
 }
 
-.learn-more {
-  color: #111;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s;
+/* Specific backgrounds for each ministry type */
+/* .ministry-card.prophetic-school    { background-image: url('assets/ministries/prophetic-school.jpg'); }
+.ministry-card.international-conf { background-image: url('/assets/ministries/international-conf.jpg'); }
+.ministry-card.media              { background-image: url('/assets/ministries/media.jpg'); }
+.ministry-card.jobs               { background-image: url('/assets/ministries/jobs.jpg'); }
+.ministry-card.upcoming-events    { background-image: url('/assets/ministries/upcoming-events.jpg'); } */
+
+/* -----------------------------
+   RESPONSIVE STYLES
+----------------------------- */
+@media (max-width: 1024px) {
+  .ministry-card {
+    height: 220px;
+  }
+  .ministry-card h5 {
+    font-size: 1.1rem;
+  }
+  .ministry-card p {
+    font-size: 0.9rem;
+  }
 }
 
-.learn-more:hover {
-  color: #c79a1e;
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+  .ministry-card {
+    height: 200px;
+  }
+  .ministry-card h5 {
+    font-size: 1rem;
+  }
+  .ministry-card p {
+    font-size: 0.85rem;
+  }
 }
 
-/* Apply any additional or previous changes below */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .ministry-card {
+    height: 180px;
+  }
+  .ministry-card h5 {
+    font-size: 0.95rem;
+  }
+  .ministry-card p {
+    font-size: 0.8rem;
+  }
+  .ministry-card .overlay {
+    padding: 10px;
+  }
+}

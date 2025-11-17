@@ -1,30 +1,78 @@
-/* Footer */
+/* ------------------------------------ 🌙 FOOTER SECTION ------------------------------------ */
 footer {
-  background: #24272d;
-  color: #fff;
+  background: #24272d; /* dark background */
+  color: #fff; /* white text */
   text-align: center;
   padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Footer links */
 footer a {
-  color: #ffffffaa;
-  margin: 0 10px;
+  color: #ffffffaa; /* semi-transparent white */
+  margin: 0 15px; /* Increased spacing between links */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transition for smooth scaling */
+  display: inline-block;
+  font-weight: 500; /* Slightly bold for modern look */
+  padding: 8px 12px; /* Padding around the link */
+  border-radius: 25px; /* Rounded corners */
 }
 
+/* Hover effect for links */
 footer a:hover {
-  color: #fff;
+  color: #fff; /* Full white text on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  background-color: #333; /* Subtle background color change */
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
+/* Footer text (optional small copyright) */
+footer p {
+  font-size: 0.95rem;
+  margin-top: 15px;
+  color: #ccc;
+  line-height: 1.5;
+}
 
-  header nav {
-    margin-top: 10px;
+/* Social icons or links container */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Increased gap between links for a modern look */
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------ 📱 MOBILE RESPONSIVE DESIGN ------------------------------------ */
+@media (max-width: 767px) {
+  footer {
+    padding: 30px 15px;
+  }
+  .footer-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 12px; /* Spacing between stacked links */
+  }
+  footer a {
+    margin: 5px 0;
+    font-size: 1rem;
+    padding: 10px 15px; /* Increased padding on mobile */
+  }
+  footer p {
+    font-size: 0.9rem;
   }
 }
 
-
+/* ------------------------------------ 💻 TABLET RESPONSIVE DESIGN ------------------------------------ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    padding: 35px 20px;
+  }
+  .footer-links {
+    gap: 15px; /* Slightly more space between links on tablets */
+  }
+  footer a {
+    font-size: 1rem;
+    padding: 10px 15px; /* Increased padding on tablets */
+  }
+}
