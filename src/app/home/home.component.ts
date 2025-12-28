@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgIf } from '@angular/common';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { CareerComponent } from '../career/career.component';
 import { ContactComponent } from '../contact/contact.component';
@@ -12,7 +12,7 @@ import { ServicesComponent } from "../services/services.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIf, SermonsComponent, ServicesComponent],  // ✅ Added NgIf here
+  imports: [NgIf, SermonsComponent, ServicesComponent, RouterModule],  // ✅ Added NgIf here
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

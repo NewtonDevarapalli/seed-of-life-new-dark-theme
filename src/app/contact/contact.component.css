@@ -1,120 +1,70 @@
-/* -----------------------------
-   CONTACT SECTION BASE STYLES
------------------------------ */
-.contact-section {
-  background-color: #000; /* dark background */
-  color: #fff; /* white text */
-  padding: 60px 20px;
-  text-align: center; /* center text for all content */
-  width: 100%; /* ensures full width */
-  box-sizing: border-box; /* include padding in width */
-}
-
-/* Section title with golden glow */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #dec32f; /* golden highlight */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-  margin-bottom: 20px;
-}
-
-/* Subtitle / lead text */
-.lead {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #f1f1f1;
-  line-height: 1.5;
-}
-
-/* -----------------------------
-   CONTACT FORM STYLES
------------------------------ */
-.contact-form {
-  max-width: 600px;
-  width: 100%; /* full width up to max */
-  margin: 0 auto; /* center horizontally */
+/* === HERO BACKGROUND === */
+.contact-hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/assets/contactus/contact.png'); /* <-- PLACE IMAGE HERE */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
-  gap: 15px; /* consistent spacing */
+  align-items: center;
 }
 
-/* Input field styling */
-.contact-input {
-  background-color: #111;
-  border: 1px solid #444;
-  color: #fff;
-  padding: 12px;
-  border-radius: 6px;
-  width: 100%;
-  box-sizing: border-box;
+/* === OVERLAY === */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
 }
 
-.contact-input::placeholder {
-  color: #aaa;
+/* === CONTENT === */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
 }
 
-.contact-input:focus {
-  border-color: #ff9800;
-  box-shadow: 0 0 5px #ff9800;
-  outline: none;
+/* === TITLE === */
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-/* -----------------------------
-   BUTTON STYLES
------------------------------ */
-.btn-contact {
-  background-color: #ff9800;
-  color: #000;
-  font-weight: bold;
-  padding: 12px 25px;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
+.contact-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
-.btn-contact:hover {
-  background-color: #e68900;
-  color: #fff;
+/* === CARDS === */
+.contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
-/* -----------------------------
-   ALERT STYLING
------------------------------ */
-.alert {
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
 }
 
-/* -----------------------------
-   RESPONSIVE DESIGN
------------------------------ */
-@media (max-width: 767px) {
-  .section-title {
-    font-size: 1.8rem;
-  }
+/* === ICONS === */
+.icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-  .lead {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
+.icon.blue { color: #0d6efd; }
+.icon.green { color: #25D366; }
+.icon.dark { color: #212529; }
 
-  .contact-section {
-    padding: 40px 15px; /* less padding for small screens */
-  }
-
-  .btn-contact {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-
-  .contact-form {
-    max-width: 100%; /* occupy full width */
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.2rem;
   }
 }

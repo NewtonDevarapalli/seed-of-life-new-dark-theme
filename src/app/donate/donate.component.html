@@ -1,31 +1,68 @@
 <!-- donate.component.html -->
-<section class="py-5 fade-in donate-section text-center">
-  <div class="container">
-    <h2 class="section-title">Partner With Us in Bringing Hope and Transformation</h2>
-    <p class="lead">
-      Your generosity makes a real difference. Every gift you sow helps us reach lives, restore hearts, and build communities with the love of Christ.
-      Please use the QR code or the payment methods below.
-    </p>
+<section class="donate-hero fade-in">
+  <div class="donate-overlay">
+    <div class="container donate-content">
 
-    <!-- QR Code -->
-    <div class="qr-code">
-      <img src="assets/image.png" alt="QR Code" />
-    </div>
+      <!-- Donation Card -->
+      <div class="donate-card mx-auto">
 
-    <!-- Payment Methods -->
-    <div class="payment-methods mt-5">
-      <div class="method">
-        <img src="https://i.ibb.co/NCY7rLS/googlepay.png" alt="Google Pay" />
-        <p>8891302474</p>
+        <!-- Header -->
+        <div class="donate-header text-center mb-4">
+          <h2 class="section-title">
+            Give with Faith &amp; Thanksgiving
+          </h2>
+          <p class="subtitle">
+            “God loves a cheerful giver.”
+          </p>
+        </div>
+
+        <!-- QR + Bank Details -->
+        <div class="donate-card-top">
+
+          <!-- QR Section -->
+          <div class="qr-section">
+            <img
+              src="assets/give/qr.png"
+              alt="Scan to give via UPI"
+              class="qr-image"
+            />
+            <p class="small mt-2">
+              Scan to give via all UPI apps
+            </p>
+          </div>
+
+          <!-- Divider -->
+          <div class="vertical-divider"></div>
+
+          <!-- Bank Details -->
+          <div class="bank-section">
+            <p><strong>Account Name:</strong> Abhijith S Saji</p>
+            <p><strong>Account Number:</strong> 10720100392027</p>
+            <p><strong>IFSC Code:</strong> FDRL0001072</p>
+            <p><strong>Branch:</strong> Nedumangad</p>
+          </div>
+
+        </div>
+
+        <!-- UPI ID -->
+        <p class="upi-id text-center mt-4">
+          UPI ID: seedoflife&#64;ybl
+        </p>
+
+        <!-- UPI Apps + Number -->
+        <div class="upi-row mt-3">
+          <img src="assets/give/gpay.png" alt="Google Pay" />
+          <img src="assets/give/phonepe.png" alt="PhonePe" />
+          <span class="upi-number">9961643950</span>
+        </div>
+
+        <!-- Help -->
+        <p class="help-text mt-3">
+          Need help with giving? Call: <strong>9961643950</strong>
+        </p>
+
       </div>
-      <div class="method">
-        <img src="https://i.ibb.co/KNNYtrt/Phonepe.png" alt="PhonePe" />
-        <p>8891302474</p>
-      </div>
-      <div class="method">
-        <img src="https://i.ibb.co/jyjns76/paytm.png" alt="Paytm" />
-        <p>8891302474</p>
-      </div>
+
     </div>
   </div>
 </section>

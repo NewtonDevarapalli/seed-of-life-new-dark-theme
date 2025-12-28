@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./donate.component.css']
 })
 export class DonateComponent {
+copyMessage: any;
+copyText(arg0: string) {
+throw new Error('Method not implemented.');
+}
   qrCodeUrl = 'assets\favicon-16x16.png'; // Replace with the actual QR code image path
 }

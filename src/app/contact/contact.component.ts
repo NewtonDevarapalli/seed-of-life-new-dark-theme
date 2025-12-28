@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -7,27 +6,16 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  successMessage: string | null = null;
-  errorMessage: string | null = null;
 
-  sendEmail(e: Event) {
-    e.preventDefault();
+  phoneNumber: string = '917981239678'; // Country code + number
+  whatsappMessage: string = 'Hello, I would like to know more about the ministry.';
+  whatsappChannelLink: string = 'https://whatsapp.com/channel/0029VbACkcOBVJkwSQIoSu2A';
 
-    emailjs.sendForm(
-      'service_oifeiiq',   // replace with EmailJS Service ID
-      'template_md006bu',  // replace with EmailJS Template ID
-      e.target as HTMLFormElement,
-      'BRM5WdVlL8VJax2n1'    // replace with EmailJS Public Key
-    ).then(
-      (result: EmailJSResponseStatus) => {
-        this.successMessage = "Your message has been sent successfully!";
-        this.errorMessage = null;
-        (e.target as HTMLFormElement).reset();
-      },
-      (error) => {
-        this.errorMessage = "Oops! Something went wrong. Please try again.";
-        this.successMessage = null;
-      }
-    );
+  get whatsappChatLink(): string {
+    return `https://wa.me/${this.phoneNumber}?text=${encodeURIComponent(this.whatsappMessage)}`;
+  }
+
+  get callLink(): string {
+    return `tel:+${this.phoneNumber}`;
   }
 }
