@@ -27,7 +27,7 @@ export class ServicesComponent {
     },
     {
       title: 'Holy Communion',
-      time: 'Third Sunday Of Every Month',
+      time: 'Last Sunday Of Every Month',
       description: 'A sacred time to remember the cross and renew our covenant walk.',
       cssClass: 'communion'
     },
