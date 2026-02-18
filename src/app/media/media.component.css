@@ -1,0 +1,114 @@
+:host {
+  display: block;
+}
+
+.media-shell {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 3.5rem;
+  color: #f4f2ed;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f1cf7a;
+  margin: 0;
+}
+
+.feature {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(140deg, #1b2730, #10181d);
+  padding: clamp(1.2rem, 3vw, 2.2rem);
+  display: grid;
+  gap: 0.85rem;
+}
+
+.feature h1 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.feature p {
+  margin: 0;
+  color: #c4cacf;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+.feature a {
+  width: fit-content;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.25rem;
+  background: #d8b768;
+  color: #141111;
+  font-weight: 700;
+}
+
+.feature a:hover {
+  transform: translateY(-1px);
+  background: #efcc78;
+}
+
+.resource-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  border-radius: 14px;
+  border: 1px solid #2b3d47;
+  background: #121b20;
+  padding: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 207, 122, 0.45);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.resource-card h2 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.resource-card p {
+  margin: 0;
+  color: #c4cacf;
+  line-height: 1.5;
+}
+
+.resource-card a {
+  color: #f1cf7a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.resource-card a:hover {
+  color: #ffe4a0;
+}
+
+.feature a:focus-visible,
+.resource-card a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}

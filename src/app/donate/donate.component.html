@@ -1,68 +1,36 @@
-<!-- donate.component.html -->
-<section class="donate-hero fade-in">
-  <div class="donate-overlay">
-    <div class="container donate-content">
+<section class="donate-shell">
+  <header class="intro">
+    <p class="eyebrow">Partner With Us</p>
+    <h1>Give with faith and thanksgiving.</h1>
+    <p>
+      Your generosity helps us disciple families, support outreach, and expand ministry impact.
+    </p>
+  </header>
 
-      <!-- Donation Card -->
-      <div class="donate-card mx-auto">
+  <section class="donate-panel">
+    <div class="qr-box">
+      <img src="assets/give/qr.png" alt="Scan to give via UPI" loading="lazy">
+      <p>Scan to give through any UPI app.</p>
+      <p class="upi-id">UPI ID: <strong>seedoflife&#64;ybl</strong></p>
+    </div>
 
-        <!-- Header -->
-        <div class="donate-header text-center mb-4">
-          <h2 class="section-title">
-            Give with Faith &amp; Thanksgiving
-          </h2>
-          <p class="subtitle">
-            “God loves a cheerful giver.”
-          </p>
-        </div>
+    <div class="bank-box">
+      <h2>Bank Transfer Details</h2>
+      <ul>
+        <li *ngFor="let detail of bankDetails">
+          <span>{{ detail.label }}:</span>
+          <strong>{{ detail.value }}</strong>
+        </li>
+      </ul>
 
-        <!-- QR + Bank Details -->
-        <div class="donate-card-top">
-
-          <!-- QR Section -->
-          <div class="qr-section">
-            <img
-              src="assets/give/qr.png"
-              alt="Scan to give via UPI"
-              class="qr-image"
-            />
-            <p class="small mt-2">
-              Scan to give via all UPI apps
-            </p>
-          </div>
-
-          <!-- Divider -->
-          <div class="vertical-divider"></div>
-
-          <!-- Bank Details -->
-          <div class="bank-section">
-            <p><strong>Account Name:</strong> Abhijith S Saji</p>
-            <p><strong>Account Number:</strong> 10720100392027</p>
-            <p><strong>IFSC Code:</strong> FDRL0001072</p>
-            <p><strong>Branch:</strong> Nedumangad</p>
-          </div>
-
-        </div>
-
-        <!-- UPI ID -->
-        <p class="upi-id text-center mt-4">
-          UPI ID: seedoflife&#64;ybl
-        </p>
-
-        <!-- UPI Apps + Number -->
-        <div class="upi-row mt-3">
-          <img src="assets/give/gpay.png" alt="Google Pay" />
-          <img src="assets/give/phonepe.png" alt="PhonePe" />
-          <span class="upi-number">9961643950</span>
-        </div>
-
-        <!-- Help -->
-        <p class="help-text mt-3">
-          Need help with giving? Call: <strong>9961643950</strong>
-        </p>
-
+      <div class="upi-apps">
+        <img *ngFor="let app of upiApps" [src]="app.logo" [alt]="app.name" loading="lazy">
       </div>
 
+      <p class="help-text">Need help with giving? Call <strong>9961643950</strong></p>
+      <a class="wa-help-btn" [href]="givingSupportLink" target="_blank" rel="noopener noreferrer">
+        Need Help on WhatsApp
+      </a>
     </div>
-  </div>
+  </section>
 </section>

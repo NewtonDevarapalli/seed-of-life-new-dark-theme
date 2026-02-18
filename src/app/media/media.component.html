@@ -1,1 +1,22 @@
-<p>media works!</p>
+<section class="media-shell">
+  <header class="feature">
+    <p class="eyebrow">Media</p>
+    <h1>{{ featuredMessage.title }}</h1>
+    <p>{{ featuredMessage.description }}</p>
+    <a [href]="featuredMessage.href" target="_blank" rel="noopener noreferrer">Visit Channel</a>
+  </header>
+
+  <div class="resource-grid">
+    <article class="resource-card" *ngFor="let item of mediaResources">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+
+      <a *ngIf="item.external" [href]="item.href" target="_blank" rel="noopener noreferrer">
+        Open Resource
+      </a>
+      <a *ngIf="!item.external" [routerLink]="item.href">
+        Open Resource
+      </a>
+    </article>
+  </div>
+</section>

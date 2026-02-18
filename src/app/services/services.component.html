@@ -1,54 +1,23 @@
-<!-- Events -->
-<section class="py-5 fade-in home-section">
-  <h2 class="section-title">Our Events</h2>
-  <div class="container mt-4">
-    <div class="row g-4">
-      
-      <div class="col-md-4">
-        <div class="info-box event-card sunday">
-          <div class="overlay">
-            <h5>Sunday Service</h5>
-            <p>Join us every Sunday for worship and fellowship</p>
-          </div>
-        </div>
-      </div>
+<section class="events-shell">
+  <div class="events-head">
+    <p class="eyebrow">Gather With Us</p>
+    <h2>Moments of worship, prayer, and transformation every week.</h2>
+  </div>
 
-      <div class="col-md-4">
-        <div class="info-box event-card communion">
-          <div class="overlay">
-            <h5>Holy Communion</h5>
-            <p>Third Sunday Of The New Month</p>
-          </div>
-        </div>
+  <div class="events-grid">
+    <article [class]="'event-card ' + event.cssClass" *ngFor="let event of events">
+      <div class="event-overlay">
+        <p class="event-time">{{ event.time }}</p>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+        <a
+          class="rsvp-link"
+          [href]="getEventRsvpLink(event)"
+          target="_blank"
+          rel="noopener noreferrer">
+          RSVP on WhatsApp
+        </a>
       </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card deliverance">
-          <div class="overlay">
-            <h5>Deliverance Meeting</h5>
-            <p>Wednesday, 8:00 PM</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card night-prayer">
-          <div class="overlay">
-            <h5>All Night Prayer</h5>
-            <p>Third Friday Of The New Month</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="info-box event-card mens-prayer">
-          <div class="overlay">
-            <h5>Men's Prayer</h5>
-            <p>Monday, 9:00 PM</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    </article>
   </div>
 </section>

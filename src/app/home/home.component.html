@@ -1,79 +1,91 @@
-<!-- Hero Section -->
 <section class="hero">
-  <video autoplay loop muted playsinline class="hero-video">
-    <source src="assets/worship-background-video.mp4" type="video/mp4">
+  <video
+    #heroVideo
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    aria-hidden="true"
+    playsinline
+    webkit-playsinline
+    preload="auto">
+    <source src="assets/background-video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="hero-overlay">
-    <h1><b>Seed Of Life Ministries</b></h1>
-    <p><b>The heaven on earth where you can worship, pray, and feel the Holy Spirit presence.</b></p>
-    <!-- Show these right after the paragraph -->
-    <div *ngIf="isLive" class="live-badge">
-      <span class="dot"></span> Live on YouTube
-        <a *ngIf="isLive"
-            href="https://www.youtube.com/@devarapallinewton4185/live"
-            class="cta live-btn" target="_blank">
-             Watch Live
-        </a>
+
+  <div class="hero-shade"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow">Seed Of Life Ministries</p>
+    <h1>The house where worship, prayer, and discipleship come alive.</h1>
+    <p class="hero-copy">
+      Join our church family as we pursue Jesus together and carry His love into every home and street.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" routerLink="/visit">Plan Your Visit</a>
+      <a class="btn-secondary" routerLink="/about">Who We Are</a>
     </div>
-    <!-- Always available -->
-    <a href="https://youtu.be/DdVf0xgjUAI?si=eSnpjpklgh3mXfkx" 
-       class="cta secondary" target="_blank">
-      Watch Sis.Triveni Testimony
-    </a>
-  </div>
-</section>
- <!-- Sermons -->
-<app-sermons></app-sermons>
-<!-- Events -->
- <app-services></app-services>
-<!-- Venue -->
-<section class="py-5 fade-in home-section">
-  <h2 class="section-title">Our Venue</h2>
-  <div class="container mt-4">
-    <div class="info-box text-center">
-      <p>📌 Seed Of Life Worship Centre - 2nd floor, Above Rynox Showroom</p>
-      <p>Beside Adidas building, Tirumalagiri, Secunderabad</p>
-    </div>
-  </div>
-</section>
-<!-- Give -->
-<section class="py-5 fade-in home-section text-center">
-  <h2 class="section-title">Partner With Us</h2>
-  <div class="container mt-4">
-    <div class="info-box text-center">
-      <p>
-        Every partnership is an opportunity to build hope, transform lives,
-        and share God's love in tangible ways...
-      </p>
+
+    <div class="hero-links">
+      <a
+        href="https://youtu.be/DdVf0xgjUAI?si=eSnpjpklgh3mXfkx"
+        target="_blank"
+        rel="noopener noreferrer">
+        Watch Sis.Triveni Testimony
+      </a>
 
       <a
-        class="btn btn-warning glow-btn mt-3"
-        routerLink="/give"
-        routerLinkActive="active">
-        Help Us Serve
+        *ngIf="isLive"
+        href="https://www.youtube.com/@pastortriveni/live"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="live-link">
+        <span class="live-dot"></span>
+        Live Now: Join Stream
       </a>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="py-5 fade-in home-section">
-  <h2 class="section-title">We’d Love To Hear From You</h2>
-  <div class="container mt-4">
-    <div class="info-box text-center">
-      <p>
-        Have a question, prayer request, or want to connect? Our ministry team
-        is here to support you.
-      </p>
+<section class="location-strip">
+  <article class="location-card" *ngFor="let location of locations">
+    <h2>{{ location.city }}</h2>
+    <p class="time">{{ location.schedule }}</p>
+    <p>{{ location.address }}</p>
+  </article>
+</section>
 
-      <a
-        class="btn btn-warning glow-btn mt-3"
-        routerLink="/visit"
-        routerLinkActive="active">
-        Contact Us
-      </a>
-    </div>
+<section class="pathways">
+  <div class="section-head">
+    <p class="eyebrow">Take Your Next Step</p>
+    <h2>Find your place in the life of this church.</h2>
+  </div>
+
+  <div class="pathway-grid">
+    <article class="pathway-card" *ngFor="let pathway of pathways">
+      <h3>{{ pathway.title }}</h3>
+      <p>{{ pathway.body }}</p>
+      <a [routerLink]="pathway.route">{{ pathway.action }}</a>
+    </article>
   </div>
 </section>
 
+<app-sermons (playbackStateChange)="onSermonsPlaybackChange($event)"></app-sermons>
+
+<app-services></app-services>
+
+<section class="final-cta">
+  <div class="final-cta-panel">
+    <p class="eyebrow">Stay Connected</p>
+    <h2>Need prayer, guidance, or community? We are here for you.</h2>
+    <p>
+      Reach out to our ministry team for prayer requests, counseling support, or any questions about joining Seed Of Life.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" routerLink="/visit">Contact Ministry Team</a>
+      <a class="btn-secondary" routerLink="/careers">Serve With Us</a>
+    </div>
+  </div>
+</section>

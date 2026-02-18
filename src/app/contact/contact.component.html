@@ -1,52 +1,47 @@
-<section class="contact-hero">
-  <!-- Dark Overlay -->
-  <div class="overlay"></div>
-
-  <div class="container content-wrapper text-center">
-
-    <h1 class="contact-title">Contact Us</h1>
-    <p class="contact-subtitle">
-      We would love to hear from you. Connect with us through WhatsApp or phone.
+<section class="contact-shell">
+  <header class="intro">
+    <p class="eyebrow">Contact And Visit</p>
+    <h1>We would love to hear from you.</h1>
+    <p>
+      Whether you need prayer, guidance, or service details, our ministry team is ready to connect with you.
     </p>
+  </header>
 
-    <div class="row justify-content-center g-4 mt-4">
+  <div class="action-grid">
+    <article class="action-card">
+      <h2>Call Us</h2>
+      <p>Reach us directly for prayer support, counseling, or questions.</p>
+      <a [href]="callLink">Call Now</a>
+    </article>
 
-      <!-- Call / WhatsApp -->
-      <div class="col-md-4">
-        <div class="contact-card">
-          <i class="bi bi-telephone-fill icon blue"></i>
-          <h5>Call / WhatsApp</h5>
-          <p>Reach us directly for prayer or support</p>
-          <a [href]="callLink" class="btn btn-primary w-100">
-            Call Now
-          </a>
-        </div>
-      </div>
+    <article class="action-card">
+      <h2>Message On WhatsApp</h2>
+      <p>Send your request and our team will respond as quickly as possible.</p>
+      <a [href]="whatsappChatLink" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+    </article>
 
-      <!-- Send Message -->
-      <div class="col-md-4">
-        <div class="contact-card">
-          <i class="bi bi-whatsapp icon green"></i>
-          <h5>Send a Message</h5>
-          <p>Send your message directly to our WhatsApp</p>
-          <a [href]="whatsappChatLink" target="_blank" class="btn btn-success w-100">
-            Message on WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <!-- Join Channel -->
-      <div class="col-md-4">
-        <div class="contact-card">
-          <i class="bi bi-megaphone-fill icon dark"></i>
-          <h5>Join Our Channel</h5>
-          <p>Get updates, devotionals & announcements</p>
-          <a [href]="whatsappChannelLink" target="_blank" class="btn btn-dark w-100">
-            Join Channel
-          </a>
-        </div>
-      </div>
-
-    </div>
+    <article class="action-card">
+      <h2>Join Updates Channel</h2>
+      <p>Get devotionals, announcements, and event reminders.</p>
+      <a [href]="whatsappChannelLink" target="_blank" rel="noopener noreferrer">Join Channel</a>
+    </article>
   </div>
+
+  <section class="visit-panel">
+    <div>
+      <p class="eyebrow">Worship Address</p>
+      <h2>Seed Of Life Worship Centre</h2>
+      <p>2nd Floor, Above Rynox Showroom, Beside Adidas Building, Tirumalagiri, Secunderabad</p>
+    </div>
+
+    <div class="visit-whatsapp-actions">
+      <a [href]="prayerRequestLink" target="_blank" rel="noopener noreferrer">Send Prayer Request</a>
+      <a [href]="planVisitLink" target="_blank" rel="noopener noreferrer">Plan Visit on WhatsApp</a>
+    </div>
+
+    <div class="visit-actions">
+      <a class="btn-primary" routerLink="/">Back To Home</a>
+      <a class="btn-secondary" routerLink="/give">Support The Mission</a>
+    </div>
+  </section>
 </section>

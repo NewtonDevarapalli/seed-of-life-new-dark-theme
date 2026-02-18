@@ -1,47 +1,21 @@
-<div class="ministries-section">
-  <!-- Section Title -->
-  <h2 class="section-title">Ministries & Programs</h2>
-  
-  <!-- Card Container -->
-  <div class="card-container">
-    <!-- Prophetic School Card -->
-    <div class="ministry-card prophetic-school">
-      <div class="overlay">
-        <h5>Admissions for Prophetic Schools</h5>
-        <p>Join our prophetic school and discover your divine calling.</p>
-      </div>
-    </div>
+<section class="ministries-shell">
+  <header class="intro">
+    <p class="eyebrow">Ministries And Programs</p>
+    <h1>Find where your gifts can serve the Kingdom.</h1>
+    <p>
+      From leadership training to media, conferences, and outreach, every ministry path is designed to grow disciples
+      and serve people.
+    </p>
+  </header>
 
-    <!-- International Conferences Card -->
-    <div class="ministry-card international-conf">
+  <div class="grid">
+    <article class="ministry-card" *ngFor="let card of ministryCards">
+      <img [src]="card.image" [alt]="card.title" loading="lazy">
       <div class="overlay">
-        <h5>International Conferences</h5>
-        <p>Global gatherings of believers for spiritual growth and renewal.</p>
+        <h2>{{ card.title }}</h2>
+        <p>{{ card.description }}</p>
+        <a [routerLink]="card.route">Learn More</a>
       </div>
-    </div>
-
-    <!-- Media Card -->
-    <div class="ministry-card media">
-      <div class="overlay">
-        <h5>Media Ministry</h5>
-        <p>Access inspiring sermons, worship sessions, and media content.</p>
-      </div>
-    </div>
-
-    <!-- Jobs Card -->
-    <div class="ministry-card jobs">
-      <div class="overlay">
-        <h5>Job Opportunities</h5>
-        <p>Explore opportunities to work within the church and ministries.</p>
-      </div>
-    </div>
-
-    <!-- Upcoming Events Card -->
-    <div class="ministry-card upcoming-events">
-      <div class="overlay">
-        <h5>Upcoming Events</h5>
-        <p>Stay up to date with all the events happening at our church.</p>
-      </div>
-    </div>
+    </article>
   </div>
-</div>
+</section>

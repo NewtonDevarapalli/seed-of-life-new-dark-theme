@@ -1,28 +1,8 @@
-/* Fixed bottom content */
-.content {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.page-content {
   width: 100%;
-  background: rgba(7, 7, 7, 0.3);
-  color: #f1f1f1;
-  text-align: center;
-  padding: 10px 15px;
-  font-size: 1rem;
-  z-index: 1000;
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-  .content {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-  }
 }

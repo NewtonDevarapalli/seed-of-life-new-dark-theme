@@ -1,202 +1,212 @@
-/* -----------------------------
-   ABOUT PAGE STYLING
------------------------------ */
-
-.about-page {
-  background-color: #000;
-  color: #fff;
-  width: 100%;
-  overflow-x: hidden; /* prevent horizontal scroll */
+:host {
+  display: block;
 }
 
-/* -----------------------------
-   ABOUT US SECTION
------------------------------ */
-.about-section {
-  background: #000;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #FFD700, #FFA500);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-}
-
-/* Underline for section title */
-.title-underline {
-  width: 80px;
-  height: 4px;
-  background: #FFD700;
-  margin: 12px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-}
-
-/* Lead paragraph */
-.lead {
-  font-size: 1.2rem;
-  color: #eee;
-  max-width: 700px;
+.about-shell {
+  width: min(1200px, 92vw);
   margin: 0 auto;
-  line-height: 1.7;
-  padding: 0 10px;
+  padding: 2rem 0 4rem;
+  color: #f1f3f4;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
 
-/* -----------------------------
-   MISSION CARDS
------------------------------ */
-.mission-card {
-  background: #000;
-  padding: 30px 20px;
-  text-align: center;
-  transition: all 0.4s ease-in-out;
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
-  border-radius: 10px;
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f1cf7a;
+  margin: 0;
 }
 
-.mission-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+.intro {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  background: linear-gradient(130deg, #1f2d35, #12191e);
+  display: grid;
+  gap: 0.85rem;
 }
 
-/* Icon inside mission card */
-.mission-card .icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+.intro h1 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  line-height: 1.2;
 }
 
-/* Title inside mission card */
-.mission-card h5 {
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #FFD700;
+.intro p {
+  margin: 0;
+  max-width: 68ch;
+  color: #c3c9cd;
+  line-height: 1.6;
 }
 
-/* Description inside mission card */
-.mission-card p {
-  font-size: 0.95rem;
-  color: #ddd;
+.section-block {
+  margin-top: 2.4rem;
+}
+
+.section-head {
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.mission-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.belief-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  border-radius: 14px;
+  background: #121b20;
+  border: 1px solid #2a3d47;
+  padding: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 207, 122, 0.45);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.card h3 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  color: #f4f2ed;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  color: #c3c9cd;
   line-height: 1.5;
 }
 
-/* -----------------------------
-   BELIEF & SERVICE CARDS
------------------------------ */
-.belief-card,
-.service-card {
-  background: #000;
-  padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
-  text-align: center;
+.pastor-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.belief-card:hover,
-.service-card:hover {
-  background: #111;
-  box-shadow: 0 0 15px #FFD700;
-  transform: translateY(-5px);
-}
-
-/* -----------------------------
-   PASTOR CARDS
------------------------------ */
 .pastor-card {
+  border-radius: 14px;
+  background: #131b20;
+  border: 1px solid #2a3d47;
+  padding: 1.1rem;
   text-align: center;
-  margin: 20px auto;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
-/* Increased pastor image dimensions */
-.pastor-img {
-  width: 300px;
-  height: 300px;
+.pastor-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 207, 122, 0.45);
+}
+
+.pastor-card img {
+  width: min(280px, 88%);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 3px solid #f3dc5e;
-  box-shadow: 0 0 15px #ece098;
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  border: 3px solid #f1cf7a;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
 }
 
-.pastor-img:hover {
-  transform: scale(1.05);
+.pastor-card h3 {
+  margin: 0.9rem 0 0.35rem;
+  font-family: Cambria, Georgia, serif;
 }
 
-/* -----------------------------
-   FADE-IN ANIMATIONS
------------------------------ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
+.pastor-card p {
+  margin: 0;
+  color: #d1d6d9;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.cta-strip {
+  margin-top: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(145deg, #1c262d, #0f1519);
+  padding: 1.3rem;
+  display: grid;
+  gap: 1rem;
 }
 
-/* -----------------------------
-   RESPONSIVE FIXES
------------------------------ */
-@media (max-width: 991px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  .lead {
-    font-size: 1rem;
+.cta-strip h2 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+}
+
+.btn-primary {
+  background: #d8b768;
+  color: #141111;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: #efcc78;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #f4f2ed;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 767px) {
-
-  .mission-card,
-  .belief-card,
-  .service-card,
-  .pastor-card {
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 20px;
+@media (max-width: 700px) {
+  .about-shell {
+    padding-bottom: 2.7rem;
   }
 
-  /* Larger mobile pastor images */
-  .pastor-img {
-    width: 130px;
-    height: 130px;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .lead {
-    font-size: 0.95rem;
-    padding: 0 5px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-  }
-
-  /* Small screen pastor images */
-  .pastor-img {
-    width: 110px;
-    height: 110px;
-  }
-
-  .lead {
-    font-size: 0.9rem;
+  .mission-grid,
+  .belief-grid,
+  .pastor-grid {
+    grid-template-columns: 1fr;
   }
 }

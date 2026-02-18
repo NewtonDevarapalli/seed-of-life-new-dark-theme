@@ -1,158 +1,177 @@
-/* -----------------------------
-   🏠 BASE HEADER
------------------------------ */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #ffffffcc;
-  backdrop-filter: blur(10px);
+:host {
+  display: block;
+}
+
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-header .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #000;
-}
-
-/* -----------------------------
-   NAVIGATION LINKS
------------------------------ */
-header nav {
+  z-index: 50;
+  width: min(1220px, 96vw);
+  margin: 0.9rem auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(130deg, rgba(18, 26, 31, 0.94), rgba(11, 16, 20, 0.94));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-header nav a:hover,
-header nav a.active {
-  color: #4a90e2;
-}
-
-/* CTA BUTTON */
-header nav .cta {
-  font-weight: 600;
-  color: #fff;
-  background: #2a5298;
-  padding: 8px 16px;
-  border-radius: 25px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-header nav .cta:hover {
-  background: #1e3a8a;
-  transform: scale(1.05);
-}
-
-/* -----------------------------
-   HAMBURGER MENU
------------------------------ */
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-  flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 18px;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  display: grid;
+  gap: 0.08rem;
+}
+
+.brand-main {
+  font-family: Cambria, Georgia, serif;
+  color: #f4f2ed;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #f1cf7a;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #d4d9dc;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.35rem 0.05rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #f4f2ed;
+  border-color: #f1cf7a;
+}
+
+.site-nav .nav-cta {
+  border: none;
+  border-radius: 999px;
+  padding: 0.52rem 1.05rem;
+  background: #d8b768;
+  color: #141111;
+  font-weight: 700;
+}
+
+.site-nav .nav-cta:hover,
+.site-nav .nav-cta.active {
+  border-color: transparent;
+  color: #141111;
+  background: #efcc78;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
   cursor: pointer;
-  z-index: 11;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.menu-icon span {
-  display: block;
-  height: 3px;
-  background: #1a1a1a;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #f4f2ed;
 }
 
-/* -----------------------------
-   MOBILE / TABLET RESPONSIVENESS
------------------------------ */
-@media (max-width: 768px) {
-  /* Show hamburger menu */
-  .menu-icon {
-    display: flex;
+.site-nav a:focus-visible,
+.menu-toggle:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: inline-flex;
   }
 
-  /* Hide nav by default */
-  header nav {
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: linear-gradient(140deg, rgba(18, 26, 31, 0.98), rgba(11, 16, 20, 0.98));
+    padding: 0.8rem;
     display: none;
     flex-direction: column;
-    width: 100%;
-    background: #ffffffee;
-    border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
+    align-items: stretch;
+    gap: 0.4rem;
   }
 
-  header nav a {
-    margin: 8px 0;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 0.95rem;
-  }
-
-  header nav .cta {
-    margin: 10px auto 0 auto;
-    width: 90%;
-    text-align: center;
-  }
-
-  /* Toggle menu when checkbox checked */
-  #menu-toggle:checked + .menu-icon + nav {
+  .site-nav.open {
     display: flex;
   }
 
-  /* Hamburger animation to X */
-  #menu-toggle:checked + .menu-icon span:nth-child(1) {
-    transform: rotate(45deg) translateY(7px);
+  .site-nav a {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.55rem 0.65rem;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    border-bottom: none;
   }
-  #menu-toggle:checked + .menu-icon span:nth-child(2) {
-    opacity: 0;
+
+  .site-nav a.active,
+  .site-nav a:hover {
+    border-color: rgba(241, 207, 122, 0.45);
   }
-  #menu-toggle:checked + .menu-icon span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-7px);
+
+  .site-nav .nav-cta {
+    text-align: center;
+    justify-content: center;
   }
 }
 
-/* -----------------------------
-   SMALLER MOBILE DEVICES
------------------------------ */
-@media (max-width: 480px) {
-  header {
-    padding: 10px 15px;
+@media (max-width: 500px) {
+  .site-header {
+    padding: 0.65rem 0.75rem;
+    gap: 0.65rem;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .brand-main {
+    font-size: 1.05rem;
   }
 
-  header nav a {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+  .brand-sub {
+    display: none;
   }
 
-  header nav .cta {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+  .site-nav {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
   }
 }

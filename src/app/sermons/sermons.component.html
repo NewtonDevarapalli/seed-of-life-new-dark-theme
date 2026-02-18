@@ -1,22 +1,76 @@
-<section class="sermons-container">
-  <h2>Words of Wisdom</h2>
+<section class="sermons-shell" #sermonsSection>
+  <div class="sermons-head">
+    <p class="eyebrow">Latest Teachings</p>
+    <h2>Words of Wisdom</h2>
+  </div>
 
-  <div class="video-player">
+  <div class="video-filters" *ngIf="allVideos.length">
+    <button
+      type="button"
+      *ngFor="let filter of filters"
+      [class.active]="selectedFilter === filter.key"
+      (click)="setFilter(filter.key)">
+      {{ filter.label }}
+    </button>
+  </div>
+
+  <div class="video-frame" [class.short-mode]="isCurrentVideoShort">
     <iframe
-      [src]="trustedUrls[activeIndex]"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
+      *ngIf="selectedVideoUrl"
+      [src]="selectedVideoUrl"
+      [title]="videos[activeIndex].title"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="autoplay; encrypted-media; picture-in-picture"
       allowfullscreen>
     </iframe>
+
+    <div class="video-empty" *ngIf="!selectedVideoUrl">
+      {{ isLoadingVideos ? 'Loading videos...' : 'No videos found for this filter.' }}
+    </div>
   </div>
 
-  <div class="dots-container">
-    <span
-      *ngFor="let video of videos; let i = index"
-      [class.active]="i === activeIndex"
-      (click)="goToVideo(i)">
-    </span>
-  </div>
+  <p class="video-title" *ngIf="videos.length">{{ videos[activeIndex].title }}</p>
 
-  <p class="video-title">{{ videos[activeIndex].title }}</p>
+  <div class="catalog-wrapper" *ngIf="videos.length">
+    <button class="catalog-nav left" type="button" aria-label="Scroll videos left" (click)="scrollCatalog(-1)">
+      ‹
+    </button>
+
+    <div class="catalog-row" #catalogRow>
+      <article
+        class="video-card"
+        *ngFor="let video of videos; let i = index"
+        [class.selected]="i === activeIndex"
+        (mouseenter)="startPreview(video.id)"
+        (mouseleave)="stopPreview(video.id)"
+        (click)="selectVideo(i)">
+        <div class="card-media">
+          <iframe
+            *ngIf="isPreviewing(video.id)"
+            [src]="getPreviewUrl(video.id)"
+            [title]="video.title"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+          <img
+            *ngIf="!isPreviewing(video.id)"
+            [src]="getVideoThumbnail(video.id)"
+            [alt]="video.title"
+            loading="lazy">
+
+          <span class="type-badge">{{ video.isShort ? 'Short' : 'Sermon' }}</span>
+        </div>
+
+        <h3>{{ video.title }}</h3>
+      </article>
+    </div>
+
+    <button class="catalog-nav right" type="button" aria-label="Scroll videos right" (click)="scrollCatalog(1)">
+      ›
+    </button>
+  </div>
 </section>

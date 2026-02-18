@@ -1,78 +1,121 @@
-/* ------------------------------------ 🌙 FOOTER SECTION ------------------------------------ */
-footer {
-  background: #24272d; /* dark background */
-  color: #fff; /* white text */
-  text-align: center;
-  padding: 40px 20px;
-  width: 100%;
-  box-sizing: border-box;
+:host {
+  display: block;
 }
 
-/* Footer links */
-footer a {
-  color: #ffffffaa; /* semi-transparent white */
-  margin: 0 15px; /* Increased spacing between links */
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease; /* Added transition for smooth scaling */
-  display: inline-block;
-  font-weight: 500; /* Slightly bold for modern look */
-  padding: 8px 12px; /* Padding around the link */
-  border-radius: 25px; /* Rounded corners */
+.site-footer {
+  width: min(1220px, 96vw);
+  margin: 2rem auto 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(140deg, #152128, #0e1519);
+  color: #f4f2ed;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  overflow: hidden;
 }
 
-/* Hover effect for links */
-footer a:hover {
-  color: #fff; /* Full white text on hover */
-  transform: translateY(-3px); /* Slight lift effect */
-  background-color: #333; /* Subtle background color change */
+.footer-shell {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1.2rem;
 }
 
-/* Footer text (optional small copyright) */
-footer p {
-  font-size: 0.95rem;
-  margin-top: 15px;
-  color: #ccc;
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  color: #f1cf7a;
+  font-weight: 700;
+}
+
+.brand-block h2 {
+  margin: 0.45rem 0 0.6rem;
+  font-family: Cambria, Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.copy,
+.contact {
+  margin: 0;
+  color: #c5cdd1;
   line-height: 1.5;
 }
 
-/* Social icons or links container */
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Increased gap between links for a modern look */
-  margin-bottom: 10px;
+.contact {
+  margin-top: 0.6rem;
+  color: #f1cf7a;
+  font-weight: 700;
 }
 
-/* ------------------------------------ 📱 MOBILE RESPONSIVE DESIGN ------------------------------------ */
-@media (max-width: 767px) {
-  footer {
-    padding: 30px 15px;
+section h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  color: #f4f2ed;
+  font-family: Cambria, Georgia, serif;
+}
+
+.link-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.link-list a {
+  text-decoration: none;
+  color: #d4dade;
+  width: fit-content;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0.15rem 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.link-list a:hover,
+.link-list a.active {
+  color: #f4f2ed;
+  border-color: #f1cf7a;
+}
+
+.link-list a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.75rem 1.2rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #b8c0c4;
+  font-size: 0.87rem;
+}
+
+@media (max-width: 900px) {
+  .footer-shell {
+    grid-template-columns: 1fr 1fr;
   }
-  .footer-links {
-    flex-direction: column; /* Stack links vertically */
-    gap: 12px; /* Spacing between stacked links */
-  }
-  footer a {
-    margin: 5px 0;
-    font-size: 1rem;
-    padding: 10px 15px; /* Increased padding on mobile */
-  }
-  footer p {
-    font-size: 0.9rem;
+
+  .brand-block {
+    grid-column: 1 / -1;
   }
 }
 
-/* ------------------------------------ 💻 TABLET RESPONSIVE DESIGN ------------------------------------ */
-@media (min-width: 768px) and (max-width: 1024px) {
-  footer {
-    padding: 35px 20px;
+@media (max-width: 640px) {
+  .site-footer {
+    margin-top: 1.5rem;
   }
-  .footer-links {
-    gap: 15px; /* Slightly more space between links on tablets */
+
+  .footer-shell {
+    grid-template-columns: 1fr;
   }
-  footer a {
-    font-size: 1rem;
-    padding: 10px 15px; /* Increased padding on tablets */
+
+  .link-list a {
+    min-height: 38px;
+    padding: 0.25rem 0.35rem;
   }
 }

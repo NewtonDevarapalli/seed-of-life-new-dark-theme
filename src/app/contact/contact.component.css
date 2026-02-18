@@ -1,70 +1,184 @@
-/* === HERO BACKGROUND === */
-.contact-hero {
-  position: relative;
-  min-height: 100vh;
-  background-image: url('/assets/contactus/contact.png'); /* <-- PLACE IMAGE HERE */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
+:host {
+  display: block;
 }
 
-/* === OVERLAY === */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+.contact-shell {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 3.7rem;
+  color: #f3f2ed;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
 
-/* === CONTENT === */
-.content-wrapper {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;
-}
-
-/* === TITLE === */
-.contact-title {
-  font-size: 3rem;
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  color: #f1cf7a;
+  margin: 0;
 }
 
-.contact-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
+.intro {
+  border-radius: 18px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(130deg, #1c2930, #10171c);
+  display: grid;
+  gap: 0.85rem;
 }
 
-/* === CARDS === */
-.contact-card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  padding: 30px 25px;
+.intro h1 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.intro p {
+  margin: 0;
+  color: #c3c9cc;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.action-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.action-card {
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  border: 1px solid #2b3d47;
+  background: #111a1f;
+  padding: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+.action-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 207, 122, 0.45);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
 }
 
-/* === ICONS === */
-.icon {
-  font-size: 42px;
-  margin-bottom: 15px;
+.action-card h2 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: 1.3rem;
 }
 
-.icon.blue { color: #0d6efd; }
-.icon.green { color: #25D366; }
-.icon.dark { color: #212529; }
+.action-card p {
+  margin: 0;
+  color: #c6ccd0;
+  line-height: 1.5;
+}
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .contact-title {
-    font-size: 2.2rem;
+.action-card a {
+  color: #f1cf7a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.action-card a:hover {
+  color: #ffe4a0;
+}
+
+.visit-panel {
+  margin-top: 1.4rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(145deg, #182329, #0e1519);
+  padding: 1.2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.visit-panel h2 {
+  margin: 0.35rem 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+}
+
+.visit-panel p {
+  margin: 0;
+  color: #c6ccd0;
+  line-height: 1.55;
+}
+
+.visit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.visit-whatsapp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.visit-whatsapp-actions a {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.56rem 1rem;
+  border: 1px solid rgba(37, 211, 102, 0.65);
+  color: #c8ffd9;
+  background: rgba(37, 211, 102, 0.12);
+}
+
+.visit-whatsapp-actions a:hover {
+  transform: translateY(-1px);
+  background: rgba(37, 211, 102, 0.2);
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+}
+
+.btn-primary {
+  background: #d8b768;
+  color: #141111;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: #efcc78;
+}
+
+.btn-secondary {
+  color: #f4f2ed;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.action-card a:focus-visible,
+.visit-whatsapp-actions a:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .action-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .action-grid {
+    grid-template-columns: 1fr;
   }
 }

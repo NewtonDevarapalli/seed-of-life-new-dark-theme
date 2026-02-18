@@ -1,116 +1,168 @@
-/* Hero Background */
-.donate-hero {
-  min-height: 100vh;
-  background-image: url('/assets/give/give-bg.png');
-  background-size: cover;
-  background-position: center;
+:host {
+  display: block;
 }
 
-/* Overlay */
-.donate-overlay {
-  min-height: 100vh;
-  background: rgba(12, 18, 45, 0.85);
-  display: flex;
-  align-items: center;
+.donate-shell {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 3.8rem;
+  color: #f4f2ed;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
 
-/* Card */
-.donate-card {
-  max-width: 900px;
-  padding: 32px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
-  color: #fff;
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f1cf7a;
+  margin: 0;
 }
 
-/* Top Layout */
-.donate-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+.intro {
+  border-radius: 18px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(130deg, #1d2830, #10181c);
+  display: grid;
+  gap: 0.85rem;
 }
 
-/* QR */
-.qr-section {
+.intro h1 {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.intro p {
+  margin: 0;
+  color: #c3c9cd;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.donate-panel {
+  margin-top: 1.3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(145deg, #182227, #0e1418);
+  padding: 1.15rem;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.qr-box {
+  border-radius: 12px;
+  border: 1px solid #2a3a43;
+  background: #11191d;
+  padding: 1rem;
   text-align: center;
+  display: grid;
+  gap: 0.55rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-.qr-image {
-  width: 190px;
+.qr-box img {
+  width: min(220px, 88%);
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
 }
 
-/* Divider */
-.vertical-divider {
-  width: 1px;
-  height: 190px;
-  background: rgba(255, 255, 255, 0.3);
+.qr-box p {
+  margin: 0;
+  color: #c7cdd0;
 }
 
-/* Bank */
-.bank-section p {
-  margin: 6px 0;
-  font-size: 1rem;
-}
-
-/* UPI */
 .upi-id {
-  font-size: 1.25rem;
-  font-weight: 600;
+  color: #f4f2ed;
 }
 
-/* Apps + Number Row */
-.upi-row {
+.bank-box {
+  border-radius: 12px;
+  border: 1px solid #2a3a43;
+  background: #11191d;
+  padding: 1rem;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.qr-box:hover,
+.bank-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(241, 207, 122, 0.45);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.bank-box h2 {
+  margin: 0 0 0.75rem;
+  font-family: Cambria, Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.bank-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.bank-box li {
+  color: #ced4d7;
+  line-height: 1.45;
+}
+
+.bank-box li span {
+  color: #f1cf7a;
+  font-weight: 700;
+  margin-right: 0.2rem;
+}
+
+.upi-apps {
+  margin-top: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
-.upi-row img {
-  height: 34px;
+.upi-apps img {
+  height: 32px;
+  border-radius: 6px;
 }
 
-.upi-number {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-left: 6px;
-}
-
-/* Help */
 .help-text {
-  text-align: center;
-  opacity: 0.9;
-  font-size: 0.95rem;
+  margin-top: 0.9rem;
+  color: #d8dcde;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .donate-card-top {
-    flex-direction: column;
-  }
-
-  .vertical-divider {
-    width: 100%;
-    height: 1px;
-  }
+.wa-help-btn {
+  margin-top: 0.25rem;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.58rem 1rem;
+  border: 1px solid rgba(37, 211, 102, 0.65);
+  color: #c8ffd9;
+  background: rgba(37, 211, 102, 0.12);
+  display: inline-flex;
 }
 
-/* Animation */
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
+.wa-help-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(37, 211, 102, 0.2);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.wa-help-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 840px) {
+  .donate-panel {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,46 +1,103 @@
-<section class="careers-section">
-  <h2 class="section-title">Join Our Ministry Team</h2>
-  <p class="section-subtitle">
-    At Seed Of Life Ministries, serving is more than a job—it's a calling.  
-    Explore opportunities to use your gifts and talents for God’s Kingdom.
-  </p>
+<section class="career-shell">
+  <header class="intro">
+    <p class="eyebrow">Join The Team</p>
+    <h1>Serve with your gifts and calling.</h1>
+    <p>
+      At Seed Of Life Ministries, serving is more than a role. It is a Kingdom assignment. Explore opportunities
+      to build people, strengthen families, and advance the Gospel.
+    </p>
+  </header>
 
-  <div class="container job-listings">
-    <!-- Job Card -->
-    <div class="job-card" *ngFor="let job of jobs">
-      <h3>{{ job.title }}</h3>
-      <p class="location">📍 {{ job.location }}</p>
-      <p class="desc">{{ job.description }}</p>
-      <button class="btn-apply" (click)="openApplication(job)">Apply</button>
+  <section class="group-block">
+    <div class="group-head">
+      <p class="eyebrow">Current Openings</p>
+      <h2>Ministry Staff Roles</h2>
     </div>
-  </div>
 
-  <section class="volunteers-section">
-  <h2 class="section-title">Volunteer Opportunities</h2>
-  <p class="section-subtitle">Serve with us and make an eternal impact. Choose a role that matches your gifts and passion.</p>
-
-  <div class="container job-listings">
-    <div class="job-card" *ngFor="let volunteer of volunteers">
-      <h3>{{ volunteer.title }}</h3>
-      <p class="desc">{{ volunteer.description }}</p>
-      <button class="btn-apply" (click)="openApplication(volunteer)">Apply to Volunteer</button>
+    <div class="opportunity-grid">
+      <article class="opportunity-card" *ngFor="let job of jobs">
+        <h3>{{ job.title }}</h3>
+        <p class="meta">{{ job.location }}</p>
+        <p>{{ job.description }}</p>
+        <button type="button" (click)="openApplication(job, 'Staff Role')">Apply</button>
+      </article>
     </div>
-  </div>
   </section>
 
-  <!-- Application Modal -->
-  <div class="modal" *ngIf="selectedJob">
-    <div class="modal-content">
-      <span class="close" (click)="closeApplication()">&times;</span>
-      <h3>Apply for {{ selectedJob.title }}</h3>
-      <form (ngSubmit)="submitApplication()">
-        <input type="text" placeholder="Full Name" [(ngModel)]="application.name" name="name" required>
-        <input type="email" placeholder="Email Address" [(ngModel)]="application.email" name="email" required>
-        <input type="tel" placeholder="Phone Number" [(ngModel)]="application.phone" name="phone" required>
-        <textarea placeholder="Why do you feel called to this role?" [(ngModel)]="application.message" name="message"></textarea>
-        <input type="file" (change)="onFileChange($event)" />
-        <button type="submit" class="btn-submit">Submit Application</button>
-      </form>
+  <section class="group-block">
+    <div class="group-head">
+      <p class="eyebrow">Serve With Us</p>
+      <h2>Volunteer Opportunities</h2>
     </div>
+
+    <div class="opportunity-grid">
+      <article class="opportunity-card" *ngFor="let volunteer of volunteers">
+        <h3>{{ volunteer.title }}</h3>
+        <p class="meta">{{ volunteer.location }}</p>
+        <p>{{ volunteer.description }}</p>
+        <button type="button" (click)="openApplication(volunteer, 'Volunteer')">Apply To Volunteer</button>
+      </article>
+    </div>
+  </section>
+
+  <div class="modal-backdrop" *ngIf="selectedOpportunity as role" (click)="closeApplication()">
+    <section class="modal-card" (click)="$event.stopPropagation()">
+      <button type="button" class="close-btn" aria-label="Close application form" (click)="closeApplication()">x</button>
+
+      <p class="eyebrow">Application Form</p>
+      <h3>Apply for {{ role.title }}</h3>
+
+      <form [formGroup]="applicationForm" (ngSubmit)="submitApplication()">
+        <label>
+          Full Name
+          <input type="text" formControlName="name">
+          <small *ngIf="applicationForm.controls.name.touched && applicationForm.controls.name.invalid">
+            Please enter your full name.
+          </small>
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" formControlName="email">
+          <small *ngIf="applicationForm.controls.email.touched && applicationForm.controls.email.invalid">
+            Please enter a valid email address.
+          </small>
+        </label>
+
+        <label>
+          Mobile Number
+          <input type="tel" formControlName="mobile">
+          <small *ngIf="applicationForm.controls.mobile.touched && applicationForm.controls.mobile.invalid">
+            Please enter a valid mobile number.
+          </small>
+        </label>
+
+        <label>
+          Why do you feel called to this role?
+          <textarea rows="4" formControlName="message"></textarea>
+          <small *ngIf="applicationForm.controls.message.touched && applicationForm.controls.message.invalid">
+            Please add at least a short message.
+          </small>
+        </label>
+
+        <label>
+          Resume (optional)
+          <input type="file" (change)="onFileChange($event)">
+        </label>
+
+        <div class="submit-actions">
+          <button class="submit-btn" type="submit" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
+          </button>
+          <button class="wa-btn" type="button" (click)="sendToWhatsApp()">
+            Send to WhatsApp
+          </button>
+        </div>
+
+        <p class="submit-status" [class.error]="submissionError" *ngIf="submissionMessage">
+          {{ submissionMessage }}
+        </p>
+      </form>
+    </section>
   </div>
 </section>
