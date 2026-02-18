@@ -45,21 +45,25 @@ section {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: brightness(1.12) contrast(1.08) saturate(1.06);
 }
 
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(8, 12, 14, 0.88) 18%, rgba(8, 12, 14, 0.55) 62%, rgba(8, 12, 14, 0.8) 100%);
+  background:
+    radial-gradient(circle at 50% 46%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.16) 58%, rgba(0, 0, 0, 0.28) 100%),
+    linear-gradient(180deg, rgba(7, 11, 14, 0.28) 0%, rgba(7, 11, 14, 0.2) 46%, rgba(7, 11, 14, 0.34) 100%);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
-  padding: 8vh 4rem;
+  max-width: 690px;
+  padding: clamp(1.3rem, 3vw, 2rem);
   display: grid;
-  gap: 1.1rem;
+  gap: 1.25rem;
+  margin: clamp(1.5rem, 4vh, 3rem) 0 clamp(1.5rem, 4vh, 3rem) clamp(1rem, 3vw, 2.2rem);
 }
 
 .eyebrow {
@@ -71,21 +75,26 @@ section {
 }
 
 .hero h1 {
+  margin: 0;
   font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.08;
+  line-height: 1.05;
+  max-width: 14ch;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.46);
 }
 
 .hero-copy {
   color: var(--text-soft);
   font-size: clamp(1rem, 2vw, 1.2rem);
-  max-width: 60ch;
+  line-height: 1.45;
+  max-width: 54ch;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 0.6rem;
+  margin-top: 0.35rem;
 }
 
 .btn-primary,
@@ -119,7 +128,7 @@ section {
 }
 
 .hero-links {
-  margin-top: 1rem;
+  margin-top: 0.55rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -287,7 +296,9 @@ section {
   }
 
   .hero-content {
-    padding: 7vh 2.2rem;
+    max-width: 640px;
+    padding: 1.2rem 1.3rem 1.4rem;
+    margin: 1.8rem 1.2rem 2rem;
   }
 }
 
@@ -297,7 +308,19 @@ section {
   }
 
   .hero-content {
-    padding: 6vh 1.2rem;
+    padding: 1rem;
+    margin: 1rem 0.85rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .hero-video {
+    filter: brightness(1.08) contrast(1.06) saturate(1.04);
+  }
+
+  .hero-shade {
+    background:
+      radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.38) 100%),
+      linear-gradient(180deg, rgba(8, 12, 14, 0.32) 0%, rgba(8, 12, 14, 0.2) 48%, rgba(8, 12, 14, 0.44) 100%);
   }
 
   .location-strip,
